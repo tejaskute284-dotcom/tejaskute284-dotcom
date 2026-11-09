@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 210" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="status-card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#17191D" />
+      <stop offset="50%" stop-color="#202124" />
+      <stop offset="100%" stop-color="#121316" />
+    </linearGradient>
+
+    <!-- Champagne Gold Gradient -->
+    <linearGradient id="gold-text-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F2DFB3" />
+      <stop offset="50%" stop-color="#D6B878" />
+      <stop offset="100%" stop-color="#B2924E" />
+    </linearGradient>
+
+    <!-- Subtle Grid -->
+    <pattern id="status-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.08" />
+    </pattern>
+
+    <style>
+      .label-cell {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        fill: #D6B878;
+        text-transform: uppercase;
+      }
+      .value-cell {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        fill: #F5F3ED;
+      }
+      .meta-tag {
+        font-family: "SFMono-Regular", Consolas, Menlo, monospace;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        fill: #A7B0BE;
+      }
+      @keyframes pulseGold {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; }
+      }
+      .status-pulse {
+        animation: pulseGold 3s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Card Background -->
+  <rect width="100%" height="100%" fill="url(#status-card-bg)" rx="10" />
+  <rect width="100%" height="100%" fill="url(#status-grid)" rx="10" />
+  <rect x="1" y="1" width="878" height="208" fill="none" stroke="#A7B0BE" stroke-width="1" stroke-opacity="0.22" rx="10" />
+
+  <!-- Card Header Indicator -->
+  <g transform="translate(30, 26)">
+    <circle cx="0" cy="0" r="4" fill="#D6B878" class="status-pulse" />
+    <text x="14" y="4" class="meta-tag" fill="#D6B878">CURRENT STATUS &amp; ACADEMIC TRAJECTORY</text>
+    <text x="820" y="4" class="meta-tag" text-anchor="end">ACADEMIC YEAR 2026</text>
+  </g>
+
+  <!-- Horizontal Divider -->
+  <line x1="30" y1="40" x2="850" y2="40" stroke="#D6B878" stroke-width="0.8" stroke-opacity="0.25" />
+
+  <!-- Row 1: Internship -->
+  <g transform="translate(35, 75)">
+    <rect x="0" y="-18" width="160" height="34" rx="4" fill="#17191D" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.2" />
+    <text x="18" y="4" class="label-cell">Internship</text>
+    <text x="185" y="4" class="value-cell">Aerus Infotech Pvt Limited <tspan fill="#A7B0BE" font-size="12px">&#x2014; Web Development Intern</tspan></text>
+  </g>
+  <line x1="35" y1="100" x2="845" y2="100" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
+
+  <!-- Row 2: Studying -->
+  <g transform="translate(35, 128)">
+    <rect x="0" y="-18" width="160" height="34" rx="4" fill="#17191D" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.2" />
+    <text x="18" y="4" class="label-cell">Studying</text>
+    <text x="185" y="4" class="value-cell">Artificial Intelligence &amp; Machine Learning (AIML) <tspan fill="#D6B878">&#x2022;</tspan> Semester 3 Coursework</text>
+  </g>
+  <line x1="35" y1="153" x2="845" y2="153" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
+
+  <!-- Row 3: Looking For -->
+  <g transform="translate(35, 182)">
+    <rect x="0" y="-18" width="160" height="34" rx="4" fill="#17191D" stroke="#D6B878" stroke-width="0.8" stroke-opacity="0.4" />
+    <text x="18" y="4" class="label-cell" fill="#F2DFB3">Looking for</text>
+    <text x="185" y="4" class="value-cell"><tspan fill="url(#gold-text-grad)" font-weight="700">Winter 2026 Internships</tspan> <tspan fill="#A7B0BE" font-size="12px">(Software Engineering &#x2022; AI/ML &#x2022; Full-Stack)</tspan></text>
+  </g>
+</svg>
