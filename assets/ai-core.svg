@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <!-- Background Canvas Palette -->
+    <linearGradient id="core-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#17191D" />
+      <stop offset="50%" stop-color="#202124" />
+      <stop offset="100%" stop-color="#111215" />
+    </linearGradient>
+
+    <!-- Champagne Gold Gradient -->
+    <linearGradient id="gold-metallic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2DFB3" />
+      <stop offset="45%" stop-color="#D6B878" />
+      <stop offset="100%" stop-color="#9C7E3E" />
+    </linearGradient>
+
+    <!-- Muted Silver Gradient -->
+    <linearGradient id="silver-metallic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2E7EE" />
+      <stop offset="50%" stop-color="#A7B0BE" />
+      <stop offset="100%" stop-color="#6F7887" />
+    </linearGradient>
+
+    <!-- Radial Glows -->
+    <radialGradient id="center-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D6B878" stop-opacity="0.32" />
+      <stop offset="60%" stop-color="#A7B0BE" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#202124" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="ring-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#A7B0BE" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#A7B0BE" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Grid -->
+    <pattern id="core-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.08" />
+    </pattern>
+
+    <style>
+      .label-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 11px;
+        letter-spacing: 2px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      .mono-metric {
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        fill: #A7B0BE;
+      }
+      @keyframes orbitOne {
+        0% { transform: rotate(0deg) skewX(12deg); }
+        100% { transform: rotate(360deg) skewX(12deg); }
+      }
+      @keyframes orbitTwo {
+        0% { transform: rotate(360deg) skewY(-8deg); }
+        100% { transform: rotate(0deg) skewY(-8deg); }
+      }
+      @keyframes orbitThree {
+        0% { transform: rotate(0deg) scale(1, 0.55); }
+        100% { transform: rotate(360deg) scale(1, 0.55); }
+      }
+      @keyframes coreFloat {
+        0%, 100% { transform: translateY(0px) scale(1); }
+        50% { transform: translateY(-7px) scale(1.02); }
+      }
+      @keyframes particleFloat {
+        0% { transform: translateY(0px); opacity: 0.3; }
+        50% { transform: translateY(-12px); opacity: 0.9; }
+        100% { transform: translateY(0px); opacity: 0.3; }
+      }
+      .orbit-ring-1 {
+        transform-origin: 400px 250px;
+        animation: orbitOne 22s linear infinite;
+      }
+      .orbit-ring-2 {
+        transform-origin: 400px 250px;
+        animation: orbitTwo 17s linear infinite;
+      }
+      .orbit-ring-3 {
+        transform-origin: 400px 250px;
+        animation: orbitThree 26s linear infinite;
+      }
+      .core-floating-group {
+        animation: coreFloat 6s ease-in-out infinite;
+      }
+      .particle-1 { animation: particleFloat 4s ease-in-out infinite; }
+      .particle-2 { animation: particleFloat 5.2s ease-in-out infinite 1s; }
+      .particle-3 { animation: particleFloat 3.8s ease-in-out infinite 0.5s; }
+      .particle-4 { animation: particleFloat 4.7s ease-in-out infinite 1.5s; }
+    </style>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="100%" height="100%" fill="url(#core-bg)" rx="12" />
+  <rect width="100%" height="100%" fill="url(#core-grid)" rx="12" />
+
+  <!-- Outer Frame -->
+  <rect x="15" y="15" width="770" height="470" fill="none" stroke="#A7B0BE" stroke-width="1" stroke-opacity="0.18" rx="8" />
+
+  <!-- Central Glow Horizon -->
+  <circle cx="400" cy="250" r="220" fill="url(#center-glow)" />
+
+  <!-- Background Concentric Target Guides -->
+  <circle cx="400" cy="250" r="190" fill="none" stroke="#A7B0BE" stroke-width="0.75" stroke-opacity="0.12" stroke-dasharray="4 6" />
+  <circle cx="400" cy="250" r="140" fill="none" stroke="#D6B878" stroke-width="0.75" stroke-opacity="0.15" />
+  <line x1="400" y1="50" x2="400" y2="450" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.1" />
+  <line x1="160" y1="250" x2="640" y2="250" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.1" />
+
+  <!-- Three Orbital Rings (SMIL/CSS Hybrid for full fallback) -->
+  <!-- Ring 1: Artificial Intelligence (Champagne Gold accented) -->
+  <g class="orbit-ring-1">
+    <ellipse cx="400" cy="250" rx="180" ry="70" fill="none" stroke="url(#gold-metallic)" stroke-width="1.6" stroke-opacity="0.65" stroke-dasharray="16 8" />
+    <circle cx="580" cy="250" r="5" fill="#D6B878" />
+    <circle cx="220" cy="250" r="3.5" fill="#F2DFB3" />
+  </g>
+
+  <!-- Ring 2: Software Engineering (Muted Silver accented) -->
+  <g class="orbit-ring-2">
+    <ellipse cx="400" cy="250" rx="155" ry="95" fill="none" stroke="url(#silver-metallic)" stroke-width="1.5" stroke-opacity="0.55" />
+    <circle cx="400" cy="155" r="4.5" fill="#A7B0BE" />
+    <circle cx="400" cy="345" r="3" fill="#E2E7EE" />
+  </g>
+
+  <!-- Ring 3: Cybersecurity (Dual Metallic Intersect) -->
+  <g class="orbit-ring-3">
+    <ellipse cx="400" cy="250" rx="205" ry="110" fill="none" stroke="url(#silver-metallic)" stroke-width="1.2" stroke-opacity="0.4" stroke-dasharray="6 6" />
+    <circle cx="605" cy="250" r="4" fill="#D6B878" />
+    <circle cx="195" cy="250" r="3.5" fill="#A7B0BE" />
+  </g>
+
+  <!-- Floating Particles in Field -->
+  <g>
+    <circle cx="310" cy="170" r="2.5" fill="#D6B878" class="particle-1" />
+    <circle cx="490" cy="140" r="2" fill="#A7B0BE" class="particle-2" />
+    <circle cx="280" cy="310" r="2.5" fill="#A7B0BE" class="particle-3" />
+    <circle cx="530" cy="330" r="3" fill="#D6B878" class="particle-4" />
+  </g>
+
+  <!-- Central Computational Core (3D Geometric Diamond/Cube Hybrid) -->
+  <g class="core-floating-group">
+    <!-- Isometric Outer Hexagonal Shield -->
+    <polygon points="400,195 448,222 448,278 400,305 352,278 352,222" fill="#17191D" stroke="url(#gold-metallic)" stroke-width="2" stroke-opacity="0.85" />
+    
+    <!-- Top Facet -->
+    <polygon points="400,195 448,222 400,250 352,222" fill="#202124" stroke="#A7B0BE" stroke-width="1" stroke-opacity="0.45" />
+    <!-- Left Facet -->
+    <polygon points="352,222 400,250 400,305 352,278" fill="#17191D" stroke="#D6B878" stroke-width="1" stroke-opacity="0.4" />
+    <!-- Right Facet -->
+    <polygon points="448,222 400,250 400,305 448,278" fill="#131417" stroke="#A7B0BE" stroke-width="1" stroke-opacity="0.3" />
+
+    <!-- Radiant Inner Core Specular Highlight -->
+    <circle cx="400" cy="250" r="16" fill="url(#gold-metallic)" />
+    <circle cx="400" cy="250" r="8" fill="#F8FAFC" />
+    
+    <!-- Core Crosshair Reticle -->
+    <line x1="400" y1="230" x2="400" y2="270" stroke="#17191D" stroke-width="1.2" />
+    <line x1="380" y1="250" x2="420" y2="250" stroke="#17191D" stroke-width="1.2" />
+  </g>
+
+  <!-- Three Orbital Legend Badges at Base -->
+  <g transform="translate(100, 435)">
+    <!-- Node 1: AI -->
+    <circle cx="0" cy="0" r="5" fill="#D6B878" />
+    <text x="14" y="4" class="label-text" fill="#F5F3ED">01 // ARTIFICIAL INTELLIGENCE</text>
+  </g>
+  <g transform="translate(345, 435)">
+    <!-- Node 2: Software Engineering -->
+    <circle cx="0" cy="0" r="5" fill="#A7B0BE" />
+    <text x="14" y="4" class="label-text" fill="#F5F3ED">02 // SOFTWARE ENGINEERING</text>
+  </g>
+  <g transform="translate(605, 435)">
+    <!-- Node 3: Cybersecurity -->
+    <circle cx="0" cy="0" r="5" fill="#D6B878" />
+    <circle cx="0" cy="0" r="2" fill="#17191D" />
+    <text x="14" y="4" class="label-text" fill="#F5F3ED">03 // CYBERSECURITY</text>
+  </g>
+
+  <!-- Top Metadata Bar -->
+  <g transform="translate(35, 40)">
+    <text x="0" y="0" class="mono-metric" fill="#D6B878">SYSTEM ARCHITECTURE: COMPUTATIONAL CORE</text>
+    <text x="730" y="0" class="mono-metric" text-anchor="end" fill="#A7B0BE">TRI-ORBITAL MATRIX v2.4</text>
+  </g>
+</svg>
