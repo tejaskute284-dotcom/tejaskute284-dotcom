@@ -139,6 +139,9 @@ I am actively seeking **Winter 2026 Internships** in **Software Engineering, AI/
 
 ## 06. Verified Hackathons &amp; Achievements
 
+* **2&times; Hackathon Finalist**
+  * **Atharva University Mumbai 24 Hours Hackathon &mdash; Finalist**: Engineered high-impact, time-critical software solutions under intensive 24-hour hackathon constraints.
+  * **Cyber Cypher 5.0 Hackathon &mdash; Finalist**: Qualified into grand finals solving cybersecurity, algorithmic problem-solving, and system resilience challenges.
 * **Smart India Hackathon (SIH) Participant / Ideator** &mdash; Team contributor on automated civic analytics and intelligent problem management platforms with collaborators.
 * **Open Source Contributor &amp; Technical Builder** &mdash; Active participant in technical symposiums, hackathons, and student engineering development initiatives.
 
@@ -148,6 +151,12 @@ I am actively seeking **Winter 2026 Internships** in **Software Engineering, AI/
 
 <div align="center">
   <img src="assets/github-metrics.svg" alt="Tejas Kute Engineering &amp; GitHub Metrics Telemetry" width="100%" />
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="https://ghchart.rshah.org/D6B878/tejaskute284-dotcom" alt="Tejas Kute GitHub Contribution Heatmap Graph" width="100%" />
 </div>
 
 <br/>
