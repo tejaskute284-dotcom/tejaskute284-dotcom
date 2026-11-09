@@ -9,26 +9,64 @@
 
     <!-- Champagne Gold Gradient -->
     <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F2DFB3" />
-      <stop offset="50%" stop-color="#D6B878" />
-      <stop offset="100%" stop-color="#A68748" />
+      <stop offset="0%" stop-color="#F5E4BE" />
+      <stop offset="45%" stop-color="#D6B878" />
+      <stop offset="100%" stop-color="#9C7E3E" />
+    </linearGradient>
+
+    <!-- Champagne Gold Metallic Shimmer -->
+    <linearGradient id="gold-shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9C7E3E" />
+      <stop offset="35%" stop-color="#D6B878" />
+      <stop offset="50%" stop-color="#FFF3D6" />
+      <stop offset="65%" stop-color="#D6B878" />
+      <stop offset="100%" stop-color="#9C7E3E" />
     </linearGradient>
 
     <!-- Muted Silver Gradient -->
     <linearGradient id="silver-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#CFD6E1" />
+      <stop offset="0%" stop-color="#E2E7EE" />
       <stop offset="50%" stop-color="#A7B0BE" />
-      <stop offset="100%" stop-color="#737D8D" />
+      <stop offset="100%" stop-color="#6E7786" />
     </linearGradient>
 
-    <!-- Radial Glows for Sophisticated Metallic Lighting -->
+    <!-- Muted Silver Metallic Shimmer -->
+    <linearGradient id="silver-shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6E7786" />
+      <stop offset="30%" stop-color="#A7B0BE" />
+      <stop offset="50%" stop-color="#FFFFFF" />
+      <stop offset="70%" stop-color="#A7B0BE" />
+      <stop offset="100%" stop-color="#6E7786" />
+    </linearGradient>
+
+    <!-- 3D Neural Sphere Shading (Graphite/Silver/Gold) -->
+    <radialGradient id="sphere-3d" cx="35%" cy="32%" r="68%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
+      <stop offset="12%" stop-color="#F2DFC0" stop-opacity="0.8" />
+      <stop offset="28%" stop-color="#D6B878" stop-opacity="0.95" />
+      <stop offset="55%" stop-color="#3D3A34" />
+      <stop offset="85%" stop-color="#1C1D21" />
+      <stop offset="100%" stop-color="#121316" />
+    </radialGradient>
+
+    <!-- Illuminated Central Nucleus -->
+    <radialGradient id="nucleus-glow" cx="45%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="30%" stop-color="#FDF3DA" />
+      <stop offset="65%" stop-color="#D6B878" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#D6B878" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Ambient Lighting Glows -->
     <radialGradient id="gold-glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#D6B878" stop-opacity="0.22" />
+      <stop offset="0%" stop-color="#D6B878" stop-opacity="0.28" />
+      <stop offset="65%" stop-color="#D6B878" stop-opacity="0.08" />
       <stop offset="100%" stop-color="#D6B878" stop-opacity="0" />
     </radialGradient>
 
     <radialGradient id="silver-glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#A7B0BE" stop-opacity="0.20" />
+      <stop offset="0%" stop-color="#A7B0BE" stop-opacity="0.22" />
+      <stop offset="65%" stop-color="#A7B0BE" stop-opacity="0.06" />
       <stop offset="100%" stop-color="#A7B0BE" stop-opacity="0" />
     </radialGradient>
 
@@ -71,37 +109,84 @@
         0%, 100% { stroke-dashoffset: 0; opacity: 0.9; }
         50% { stroke-dashoffset: 40; opacity: 0.45; }
       }
-      @keyframes floatRing {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-      @keyframes floatRev {
-        0% { transform: rotate(360deg); }
-        100% { transform: rotate(0deg); }
-      }
-      @keyframes coreBreathe {
-        0%, 100% { transform: scale(1); opacity: 0.85; }
-        50% { transform: scale(1.05); opacity: 1; }
-      }
       .line-anim {
         stroke-dasharray: 200;
         animation: goldPulse 6s ease-in-out infinite;
       }
-      .ring-1 {
-        transform-origin: 970px 200px;
-        animation: floatRing 24s linear infinite;
+
+      /* ================= 3D QUANTUM GYROSCOPE ANIMATIONS ================= */
+      @keyframes gyroFloat {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-9px) rotate(1.5deg); }
       }
-      .ring-2 {
-        transform-origin: 970px 200px;
-        animation: floatRev 18s linear infinite;
+      @keyframes ringSpin1 {
+        0% { transform: rotate(0deg) scale(1, 0.42); }
+        100% { transform: rotate(360deg) scale(1, 0.42); }
       }
-      .ring-3 {
-        transform-origin: 970px 200px;
-        animation: floatRing 30s linear infinite;
+      @keyframes ringSpin2 {
+        0% { transform: rotate(360deg) scale(1, 0.58) rotate(55deg); }
+        100% { transform: rotate(0deg) scale(1, 0.58) rotate(55deg); }
       }
-      .core-element {
+      @keyframes ringSpin3 {
+        0% { transform: rotate(0deg) scale(1, 0.50) rotate(-50deg); }
+        100% { transform: rotate(360deg) scale(1, 0.50) rotate(-50deg); }
+      }
+      @keyframes coreRotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes nucleusPulse {
+        0%, 100% { transform: scale(1); opacity: 0.85; }
+        50% { transform: scale(1.18); opacity: 1; }
+      }
+      @keyframes nodeOrbit1 {
+        0% { transform: rotate(0deg) translateX(148px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(148px) rotate(-360deg); }
+      }
+      @keyframes nodeOrbit2 {
+        0% { transform: rotate(360deg) translateX(126px) rotate(-360deg); }
+        100% { transform: rotate(0deg) translateX(126px) rotate(360deg); }
+      }
+      @keyframes nodeOrbit3 {
+        0% { transform: rotate(0deg) translateX(105px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(105px) rotate(-360deg); }
+      }
+
+      .gyro-assembly {
         transform-origin: 970px 200px;
-        animation: coreBreathe 5s ease-in-out infinite;
+        animation: gyroFloat 7s ease-in-out infinite;
+      }
+      .gyro-ring-1 {
+        transform-origin: 970px 200px;
+        animation: ringSpin1 26s linear infinite;
+      }
+      .gyro-ring-2 {
+        transform-origin: 970px 200px;
+        animation: ringSpin2 20s linear infinite;
+      }
+      .gyro-ring-3 {
+        transform-origin: 970px 200px;
+        animation: ringSpin3 17s linear infinite;
+      }
+      .quantum-core-circuits {
+        transform-origin: 970px 200px;
+        animation: coreRotate 38s linear infinite;
+      }
+      .nucleus-glow-core {
+        transform-origin: 970px 200px;
+        animation: nucleusPulse 4.2s ease-in-out infinite;
+      }
+      .quantum-node-1 {
+        transform-origin: 970px 200px;
+        animation: nodeOrbit1 14s linear infinite;
+      }
+      .quantum-node-2 {
+        transform-origin: 970px 200px;
+        animation: nodeOrbit2 11s linear infinite;
+      }
+      .quantum-node-3 {
+        transform-origin: 970px 200px;
+        animation: nodeOrbit3 8.5s linear infinite;
       }
     </style>
   </defs>
@@ -113,7 +198,7 @@
   <!-- Ambient Lighting Nodes -->
   <circle cx="200" cy="100" r="280" fill="url(#gold-glow)" />
   <circle cx="970" cy="200" r="320" fill="url(#silver-glow)" />
-  <circle cx="970" cy="200" r="180" fill="url(#gold-glow)" />
+  <circle cx="970" cy="200" r="210" fill="url(#gold-glow)" />
 
   <!-- Decorative Border Frame -->
   <rect x="25" y="25" width="1150" height="350" fill="none" stroke="#A7B0BE" stroke-width="1" stroke-opacity="0.2" rx="10" />
@@ -170,49 +255,109 @@
     </g>
   </g>
 
-  <!-- Right Side: 3D-Inspired Computational Object Visual -->
-  <g id="hero-orb">
-    <!-- Ambient Orbital Aura -->
-    <ellipse cx="970" cy="200" rx="145" ry="55" fill="none" stroke="url(#silver-grad)" stroke-width="1" stroke-opacity="0.35" class="ring-1" />
-    <ellipse cx="970" cy="200" rx="135" ry="95" fill="none" stroke="url(#gold-grad)" stroke-width="1.2" stroke-opacity="0.45" class="ring-2" stroke-dasharray="12 8" />
-    <ellipse cx="970" cy="200" rx="110" ry="120" fill="none" stroke="url(#silver-grad)" stroke-width="1" stroke-opacity="0.3" class="ring-3" />
+  <!-- ================= RIGHT SIDE: 3D NEURAL QUANTUM GYROSCOPE ================= -->
+  <g id="hero-gyroscope" class="gyro-assembly">
 
-    <!-- Isometric Computational Grid Plate -->
-    <g transform="translate(970, 200) scale(1, 0.58) rotate(45)">
-      <rect x="-70" y="-70" width="140" height="140" fill="#17191D" stroke="#D6B878" stroke-width="1.5" stroke-opacity="0.5" rx="8" />
-      <rect x="-50" y="-50" width="100" height="100" fill="none" stroke="#A7B0BE" stroke-width="1" stroke-opacity="0.4" />
-      <line x1="-70" y1="0" x2="70" y2="0" stroke="#D6B878" stroke-width="0.8" stroke-opacity="0.35" />
-      <line x1="0" y1="-70" x2="0" y2="70" stroke="#D6B878" stroke-width="0.8" stroke-opacity="0.35" />
+    <!-- Outermost Stator Ring Horizon with Calibration Notches -->
+    <g>
+      <circle cx="970" cy="200" r="162" fill="none" stroke="#A7B0BE" stroke-width="0.8" stroke-opacity="0.25" stroke-dasharray="3 8" />
+      <circle cx="970" cy="200" r="168" fill="none" stroke="#D6B878" stroke-width="0.5" stroke-opacity="0.20" />
+      <!-- 4 Cardinal Gold Calibration Pointers -->
+      <line x1="970" y1="30" x2="970" y2="40" stroke="#D6B878" stroke-width="2" />
+      <line x1="970" y1="360" x2="970" y2="370" stroke="#D6B878" stroke-width="2" />
+      <line x1="800" y1="200" x2="810" y2="200" stroke="#A7B0BE" stroke-width="2" />
+      <line x1="1130" y1="200" x2="1140" y2="200" stroke="#A7B0BE" stroke-width="2" />
     </g>
 
-    <!-- Central Core Node -->
-    <g class="core-element">
-      <circle cx="970" cy="200" r="32" fill="#17191D" stroke="url(#gold-grad)" stroke-width="2.5" />
-      <circle cx="970" cy="200" r="18" fill="url(#gold-grad)" opacity="0.85" />
-      <circle cx="970" cy="200" r="8" fill="#F5F3ED" />
-      <!-- Core Inner Crosshair -->
-      <line x1="970" y1="175" x2="970" y2="225" stroke="#17191D" stroke-width="1.5" />
-      <line x1="945" y1="200" x2="995" y2="200" stroke="#17191D" stroke-width="1.5" />
+    <!-- PRIMARY GYROSCOPIC GIMBAL 1: Outer Champagne Gold Equatorial Track -->
+    <g class="gyro-ring-1">
+      <!-- 3D Beveled Outer Ring -->
+      <ellipse cx="970" cy="200" rx="148" ry="148" fill="none" stroke="url(#gold-shimmer)" stroke-width="3.2" stroke-opacity="0.9" />
+      <ellipse cx="970" cy="200" rx="142" ry="142" fill="none" stroke="#17191D" stroke-width="1" />
+      <ellipse cx="970" cy="200" rx="154" ry="154" fill="none" stroke="url(#gold-grad)" stroke-width="0.8" stroke-opacity="0.4" stroke-dasharray="16 12" />
+      <!-- Gimbal Pivot Nodes -->
+      <circle cx="822" cy="200" r="4.5" fill="#F5E4BE" stroke="#17191D" stroke-width="1.5" />
+      <circle cx="1118" cy="200" r="4.5" fill="#F5E4BE" stroke="#17191D" stroke-width="1.5" />
     </g>
 
-    <!-- Orbiting Satellite Data Nodes -->
-    <circle cx="850" cy="165" r="4" fill="#D6B878">
-      <animate attributeName="cy" values="165;155;165" dur="3s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="1085" cy="225" r="3.5" fill="#A7B0BE">
-      <animate attributeName="cy" values="225;235;225" dur="4s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="940" cy="95" r="3" fill="#D6B878">
-      <animate attributeName="cx" values="940;950;940" dur="3.5s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="1010" cy="305" r="2.5" fill="#A7B0BE">
-      <animate attributeName="cx" values="1010;1000;1010" dur="4.2s" repeatCount="indefinite" />
-    </circle>
+    <!-- SECONDARY GYROSCOPIC GIMBAL 2: Interlocking Muted Silver Inclined Ring (55 deg) -->
+    <g class="gyro-ring-2">
+      <!-- 3D Layered Elliptical Track -->
+      <ellipse cx="970" cy="200" rx="126" ry="126" fill="none" stroke="url(#silver-shimmer)" stroke-width="2.6" stroke-opacity="0.85" />
+      <ellipse cx="970" cy="200" rx="121" ry="121" fill="none" stroke="#202124" stroke-width="1" />
+      <ellipse cx="970" cy="200" rx="131" ry="131" fill="none" stroke="#A7B0BE" stroke-width="0.75" stroke-opacity="0.45" stroke-dasharray="8 6" />
+      <!-- Silver Pivot Nodes -->
+      <circle cx="844" cy="200" r="4" fill="#FFFFFF" stroke="#17191D" stroke-width="1.5" />
+      <circle cx="1096" cy="200" r="4" fill="#FFFFFF" stroke="#17191D" stroke-width="1.5" />
+    </g>
+
+    <!-- TERTIARY GYROSCOPIC GIMBAL 3: Inner Dual-Metallic Quantum Core Orbit (-50 deg) -->
+    <g class="gyro-ring-3">
+      <!-- 3D Inner Fine Track -->
+      <ellipse cx="970" cy="200" rx="105" ry="105" fill="none" stroke="url(#gold-grad)" stroke-width="2" stroke-opacity="0.8" />
+      <ellipse cx="970" cy="200" rx="98" ry="98" fill="none" stroke="url(#silver-grad)" stroke-width="0.8" stroke-opacity="0.5" stroke-dasharray="5 5" />
+      <!-- Core Anchor Pivots -->
+      <circle cx="865" cy="200" r="3.5" fill="#F5E4BE" />
+      <circle cx="1075" cy="200" r="3.5" fill="#F5E4BE" />
+    </g>
+
+    <!-- Travelling Quantum Satellite Nodes (Precise Precession) -->
+    <g class="quantum-node-1">
+      <circle cx="970" cy="200" r="5" fill="#FFF3D6" stroke="#9C7E3E" stroke-width="1.5" />
+      <circle cx="970" cy="200" r="2" fill="#FFFFFF" />
+    </g>
+    <g class="quantum-node-2">
+      <circle cx="970" cy="200" r="4" fill="#FFFFFF" stroke="#6E7786" stroke-width="1.2" />
+      <circle cx="970" cy="200" r="1.5" fill="#D6B878" />
+    </g>
+    <g class="quantum-node-3">
+      <circle cx="970" cy="200" r="3.5" fill="#F5E4BE" stroke="#17191D" stroke-width="1" />
+    </g>
+
+    <!-- INTERIOR 3D NEURAL QUANTUM PROCESSOR SPHERE -->
+    <g>
+      <!-- Deep Radial Shadow Base for Floating Elevation -->
+      <ellipse cx="970" cy="235" rx="55" ry="16" fill="#111215" opacity="0.75" />
+
+      <!-- Primary 3D Metallic Sphere Shading -->
+      <circle cx="970" cy="200" r="58" fill="url(#sphere-3d)" stroke="url(#gold-shimmer)" stroke-width="1.6" />
+
+      <!-- Specular Highlight Sheen Arc -->
+      <path d="M 940 162 A 54 54 0 0 1 988 152" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.65" />
+      <path d="M 946 168 A 48 48 0 0 1 980 160" fill="none" stroke="#FFF3D6" stroke-width="1" stroke-linecap="round" opacity="0.45" />
+
+      <!-- Rotating Circuit Geometries on Sphere Surface -->
+      <g class="quantum-core-circuits">
+        <!-- Neural Latitude & Longitude Quantum Rings -->
+        <ellipse cx="970" cy="200" rx="52" ry="18" fill="none" stroke="#D6B878" stroke-width="0.9" stroke-opacity="0.7" stroke-dasharray="14 6" />
+        <ellipse cx="970" cy="200" rx="18" ry="52" fill="none" stroke="#A7B0BE" stroke-width="0.9" stroke-opacity="0.6" stroke-dasharray="12 5" />
+        <ellipse cx="970" cy="200" rx="42" ry="42" fill="none" stroke="#D6B878" stroke-width="0.5" stroke-opacity="0.35" stroke-dasharray="4 8" />
+
+        <!-- Radial Bus Traces -->
+        <line x1="970" y1="145" x2="970" y2="165" stroke="url(#gold-grad)" stroke-width="1.2" />
+        <line x1="970" y1="235" x2="970" y2="255" stroke="url(#gold-grad)" stroke-width="1.2" />
+        <line x1="915" y1="200" x2="935" y2="200" stroke="#A7B0BE" stroke-width="1.2" />
+        <line x1="1005" y1="200" x2="1025" y2="200" stroke="#A7B0BE" stroke-width="1.2" />
+        <circle cx="970" cy="165" r="2" fill="#D6B878" />
+        <circle cx="970" cy="235" r="2" fill="#D6B878" />
+        <circle cx="935" cy="200" r="2" fill="#A7B0BE" />
+        <circle cx="1005" cy="200" r="2" fill="#A7B0BE" />
+      </g>
+
+      <!-- Central Illuminated Quantum Nucleus -->
+      <circle cx="970" cy="200" r="22" fill="#17191D" stroke="url(#gold-grad)" stroke-width="1.5" />
+      <circle cx="970" cy="200" r="16" fill="url(#nucleus-glow)" class="nucleus-glow-core" />
+      <circle cx="970" cy="200" r="7" fill="#FFFFFF" />
+
+      <!-- Precision Optical Reticle -->
+      <line x1="970" y1="188" x2="970" y2="212" stroke="#17191D" stroke-width="1.2" stroke-linecap="round" />
+      <line x1="958" y1="200" x2="982" y2="200" stroke="#17191D" stroke-width="1.2" stroke-linecap="round" />
+    </g>
   </g>
 
   <!-- Technical Telemetry Stamp -->
   <g transform="translate(1085, 340)">
-    <text x="0" y="0" class="mono-meta" text-anchor="end" fill="#A7B0BE">SYS_REV // 2026.4</text>
-    <text x="0" y="14" class="mono-meta" text-anchor="end" fill="#D6B878">PALETTE: GOLD/SILVER</text>
+    <text x="0" y="0" class="mono-meta" text-anchor="end" fill="#A7B0BE">QUANTUM_REV // 2026.5</text>
+    <text x="0" y="14" class="mono-meta" text-anchor="end" fill="#D6B878">3D NEURAL GYROSCOPE</text>
   </g>
 </svg>
