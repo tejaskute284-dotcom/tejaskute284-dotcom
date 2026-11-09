@@ -59,7 +59,7 @@ I am actively seeking **Winter 2026 Internships** in **Software Engineering, AI/
 * **Organization**: Aerus Infotech Pvt Limited
 * **Problem Solved**: High-concurrency client workflows and modular component architectures requiring minimal latency and strict data integrity.
 * **Technical Description**: Enterprise web application platform engineering with robust client-facing interfaces, reactive state management, asynchronous REST integration, and cross-browser optimized responsiveness.
-* **Key Contributors**: **Tejas Kute** &bull; **Aaryan Raorane** &bull; **Shreya Desai**
+* **Key Contributors**: **Tejas Kute** &bull; **Shreya Desai** &bull; **Aaryan Raorane**
 * **Contribution**: Engineered interactive frontend views, designed clean reusable UI components, and collaborated on end-to-end API integration and client-side validation logic.
 * **Tech Stack**: JavaScript (ES6+), React.js, HTML5, CSS3, RESTful APIs, Git.
 * **Repository**: [Aerus Infotech Internship Workspace](https://github.com/tejaskute284-dotcom)
@@ -69,7 +69,7 @@ I am actively seeking **Winter 2026 Internships** in **Software Engineering, AI/
 ### 2. **SatyaSetu — AI Credentialing &amp; Forensic Document Verification**
 * **Problem Solved**: Mitigates digital certificate tampering, fraudulent academic credentials, and unverified documentation through intelligent forensic analysis.
 * **Technical Description**: An intelligent credential forensics platform combining neural classification, cryptographic hash verification, and automated tamper-detection pipelines to provide instant, tamper-proof document validation.
-* **Key Contributors**: **Tejas Kute** &bull; **Aaryan Raorane** &bull; **Shreya Desai**
+* **Key Contributors**: **Tejas Kute** &bull; **Shreya Desai** &bull; **Aaryan Raorane**
 * **Contribution**: Developed the forensic document ingestion architecture, integrated cryptographic validation mechanisms, and structured the verification REST endpoints.
 * **Tech Stack**: Python, Computer Vision, FastAPI/Flask, Cryptography, RESTful APIs.
 * **Repository**: [SatyaSetu Project Repository](https://github.com/tejaskute284-dotcom/SatyaSetu)
@@ -79,7 +79,7 @@ I am actively seeking **Winter 2026 Internships** in **Software Engineering, AI/
 ### 3. **CryoNex — Cold-Chain Telemetry &amp; Pharma Compliance Console**
 * **Problem Solved**: Prevents temperature breaches and spoilage in cold-chain pharmaceutical shipments through unified telemetry tracking and regulatory auditing.
 * **Technical Description**: A high-precision monitoring dashboard featuring interactive telemetry mapping, multi-step shipment dispatch wizards, vault security controls, and GxP regulatory compliance logging.
-* **Key Contributors**: **Tejas Kute** &bull; **Aaryan Raorane** &bull; **Shreya Desai**
+* **Key Contributors**: **Tejas Kute** &bull; **Shreya Desai** &bull; **Aaryan Raorane**
 * **Contribution**: Implemented interactive telemetry views, automated wizard dispatch workflows, multi-role security guards, and animated data monitoring visualizations.
 * **Tech Stack**: JavaScript (ES6+), Chart.js, HTML5, CSS3 / Tailwind, Map Engine, Anime.js.
 * **Repository**: [CryoNex Project Repository](https://github.com/tejaskute284-dotcom)
@@ -89,7 +89,7 @@ I am actively seeking **Winter 2026 Internships** in **Software Engineering, AI/
 ### 4. **FlowState — Developer Cognitive Workflow &amp; Task Orchestrator**
 * **Problem Solved**: Enhances developer deep-work efficiency by reducing context switching and intelligently structuring execution pipelines.
 * **Technical Description**: A focused productivity and development orchestrator that tracks cognitive sessions, automates milestone delivery, and manages context-aware developer priorities.
-* **Key Contributors**: **Tejas Kute** &bull; **Aaryan Raorane** &bull; **Shreya Desai**
+* **Key Contributors**: **Tejas Kute** &bull; **Shreya Desai** &bull; **Aaryan Raorane**
 * **Contribution**: Designed the state synchronization engine, modular task decomposition system, and minimal distraction-free developer interface.
 * **Tech Stack**: TypeScript, React / Next.js, Node.js, Tailwind CSS, Local Persistence.
 * **Repository**: [FlowState Project Repository](https://github.com/tejaskute284-dotcom/flowstate)
@@ -127,7 +127,7 @@ I am actively seeking **Winter 2026 Internships** in **Software Engineering, AI/
 
 * **Web Development Intern** &mdash; *Aerus Infotech Pvt Limited*
   * Developed and tested responsive web application modules and front-end user interfaces.
-  * Collaborated with team members (**Aaryan Raorane**, **Shreya Desai**) on software architecture, client requirements, and interface performance.
+  * Collaborated with team members (**Shreya Desai**, **Aaryan Raorane**) on software architecture, client requirements, and interface performance.
 
 * **Technical Researcher &amp; Contributor** &mdash; *CONCPT Labs*
   * Participated in applied technology exploration, research prototyping, and advanced software tooling investigations.
@@ -151,6 +151,12 @@ I am actively seeking **Winter 2026 Internships** in **Software Engineering, AI/
 
 <div align="center">
   <img src="assets/github-metrics.svg" alt="Tejas Kute Engineering &amp; GitHub Metrics Telemetry" width="100%" />
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="assets/github-3d-graph.svg" alt="Tejas Kute 3D Isometric Contribution Animation" width="100%" />
 </div>
 
 <br/>
