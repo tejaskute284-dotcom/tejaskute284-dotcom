@@ -162,7 +162,7 @@ I am actively seeking **Winter 2026 Internships** in **Software Engineering, AI/
 <br/>
 
 <div align="center">
-  <img src="https://ghchart.rshah.org/D6B878/tejaskute284-dotcom" alt="Tejas Kute GitHub Contribution Heatmap Graph" width="100%" />
+  <img src="assets/github-contribution-heatmap.svg" alt="Tejas Kute GitHub Contribution Heatmap Graph" width="100%" />
 </div>
 
 <br/>
