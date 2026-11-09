@@ -58,7 +58,7 @@ I am actively seeking **Software Engineering, AI/ML, and Data Science Internship
 * **Technical Description**: An intelligent credential forensics platform combining neural classification, cryptographic hash verification, and automated tamper-detection pipelines to provide instant, tamper-proof document validation.
 * **Contribution**: Developed the forensic document ingestion architecture, integrated cryptographic validation mechanisms, and structured the verification REST endpoints.
 * **Tech Stack**: Python, Computer Vision, FastAPI/Flask, Cryptography, RESTful APIs.
-* **Repository**: [SatyaSetu Project Repository](https://github.com/tejaskute284-dotcom)
+* **Repository**: [SatyaSetu Project Repository](https://github.com/tejaskute284-dotcom/SatyaSetu)
 
 ---
 
@@ -76,7 +76,7 @@ I am actively seeking **Software Engineering, AI/ML, and Data Science Internship
 * **Technical Description**: A focused productivity and development orchestrator that tracks cognitive sessions, automates milestone delivery, and manages context-aware developer priorities.
 * **Contribution**: Designed the state synchronization engine, modular task decomposition system, and minimal distraction-free developer interface.
 * **Tech Stack**: TypeScript, React / Next.js, Node.js, Tailwind CSS, Local Persistence.
-* **Repository**: [FlowState Project Repository](https://github.com/tejaskute284-dotcom)
+* **Repository**: [FlowState Project Repository](https://github.com/tejaskute284-dotcom/flowstate)
 
 ---
 
@@ -131,7 +131,7 @@ I am actively seeking **Software Engineering, AI/ML, and Data Science Internship
 ## 07. GitHub Contributions &amp; Statistics
 
 <div align="center">
-  <img src="assets/github-metrics.svg" alt="Tejas Kute Engineering &amp; Contribution Metrics" width="100%" />
+  <img src="assets/github-metrics.svg" alt="Tejas Kute Engineering &amp; GitHub Metrics Telemetry" width="100%" />
 </div>
 
 <br/>
@@ -142,15 +142,15 @@ I am actively seeking **Software Engineering, AI/ML, and Data Science Internship
 
 <div align="center">
   <a href="https://github.com/tejaskute284-dotcom">
-    <img src="https://img.shields.io/badge/GitHub-Profile-202124?style=for-the-badge&logo=github&logoColor=D6B878&labelColor=17191D" alt="GitHub" />
+    <img src="https://img.shields.io/badge/GitHub-tejaskute284--dotcom-202124?style=for-the-badge&logo=github&logoColor=D6B878&labelColor=17191D" alt="GitHub Profile" />
   </a>
   &nbsp;
-  <a href="https://linkedin.com/in/tejaskute">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect-202124?style=for-the-badge&logo=linkedin&logoColor=D6B878&labelColor=17191D" alt="LinkedIn" />
+  <a href="https://www.linkedin.com/in/tejas-kute-512aa2363">
+    <img src="https://img.shields.io/badge/LinkedIn-Tejas_Kute-202124?style=for-the-badge&logo=linkedin&logoColor=D6B878&labelColor=17191D" alt="LinkedIn Profile" />
   </a>
   &nbsp;
-  <a href="mailto:tejas@example.com">
-    <img src="https://img.shields.io/badge/Email-Contact_Me-202124?style=for-the-badge&logo=mail.ru&logoColor=D6B878&labelColor=17191D" alt="Email" />
+  <a href="mailto:tejaskute284@gmail.com">
+    <img src="https://img.shields.io/badge/Email-tejaskute284@gmail.com-202124?style=for-the-badge&logo=gmail&logoColor=D6B878&labelColor=17191D" alt="Contact Email" />
   </a>
 </div>
 

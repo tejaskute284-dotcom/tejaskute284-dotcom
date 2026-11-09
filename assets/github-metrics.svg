@@ -1,32 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 200" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 310" width="100%" height="100%">
   <defs>
     <!-- Background Gradient -->
-    <linearGradient id="metrics-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="metrics-card-bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#17191D" />
       <stop offset="50%" stop-color="#202124" />
-      <stop offset="100%" stop-color="#141518" />
+      <stop offset="100%" stop-color="#121316" />
     </linearGradient>
 
     <!-- Champagne Gold Gradient -->
-    <linearGradient id="metric-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="gold-grad-stat" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#F2DFB3" />
       <stop offset="50%" stop-color="#D6B878" />
-      <stop offset="100%" stop-color="#B3934F" />
+      <stop offset="100%" stop-color="#A68748" />
     </linearGradient>
 
     <!-- Muted Silver Gradient -->
-    <linearGradient id="metric-silver" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#DCE3ED" />
+    <linearGradient id="silver-grad-stat" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#CFD6E1" />
       <stop offset="50%" stop-color="#A7B0BE" />
       <stop offset="100%" stop-color="#737D8D" />
     </linearGradient>
 
-    <pattern id="metrics-grid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.08" />
+    <pattern id="metrics-pattern" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M 28 0 L 0 0 0 28" fill="none" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.08" />
     </pattern>
 
     <style>
-      .metric-title {
+      .stat-header {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         font-size: 13px;
         font-weight: 700;
@@ -34,82 +34,138 @@
         fill: #D6B878;
         text-transform: uppercase;
       }
-      .metric-number {
+      .stat-number {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        font-size: 28px;
+        font-size: 26px;
         font-weight: 800;
-        letter-spacing: 1px;
+        letter-spacing: 0.5px;
         fill: #F5F3ED;
       }
-      .metric-label {
+      .stat-label {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        font-size: 11px;
-        font-weight: 500;
+        font-size: 10.5px;
+        font-weight: 600;
         letter-spacing: 1.5px;
         fill: #A7B0BE;
         text-transform: uppercase;
       }
-      .metric-meta {
+      .stat-meta {
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
         font-size: 10px;
-        letter-spacing: 1.2px;
+        letter-spacing: 1px;
         fill: #A7B0BE;
       }
-      @keyframes pulseNode {
-        0%, 100% { opacity: 0.6; }
+      .lang-name {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        fill: #F5F3ED;
+      }
+      .lang-pct {
+        font-family: "SFMono-Regular", Consolas, Menlo, monospace;
+        font-size: 10px;
+        fill: #A7B0BE;
+      }
+      @keyframes pulseDot {
+        0%, 100% { opacity: 0.5; }
         50% { opacity: 1; }
       }
-      .node-pulse {
-        animation: pulseNode 3s ease-in-out infinite;
+      .pulse-item {
+        animation: pulseDot 3s ease-in-out infinite;
       }
     </style>
   </defs>
 
   <!-- Card Background -->
-  <rect width="100%" height="100%" fill="url(#metrics-bg)" rx="10" />
-  <rect width="100%" height="100%" fill="url(#metrics-grid)" rx="10" />
-  <rect x="1" y="1" width="878" height="198" fill="none" stroke="#A7B0BE" stroke-width="1" stroke-opacity="0.22" rx="10" />
+  <rect width="100%" height="100%" fill="url(#metrics-card-bg)" rx="10" />
+  <rect width="100%" height="100%" fill="url(#metrics-pattern)" rx="10" />
+  <rect x="1" y="1" width="918" height="308" fill="none" stroke="#A7B0BE" stroke-width="1" stroke-opacity="0.2" rx="10" />
 
   <!-- Top Status Bar -->
-  <g transform="translate(30, 32)">
-    <circle cx="0" cy="0" r="4" fill="#D6B878" class="node-pulse" />
-    <text x="12" y="4" class="metric-title">ENGINEERING ACTIVITY &amp; CONTRIBUTION MATRIX</text>
-    <text x="820" y="4" class="metric-meta" text-anchor="end">PROFILE // TEJASKUTE284-DOTCOM</text>
+  <g transform="translate(30, 30)">
+    <circle cx="0" cy="0" r="4" fill="#D6B878" class="pulse-item" />
+    <text x="14" y="4" class="stat-header">GITHUB ACTIVITY &amp; REPOSITORY TELEMETRY</text>
+    <text x="860" y="4" class="stat-meta" text-anchor="end">@TEJASKUTE284-DOTCOM</text>
   </g>
 
   <!-- Horizontal Divider -->
-  <line x1="30" y1="48" x2="850" y2="48" stroke="#D6B878" stroke-width="0.8" stroke-opacity="0.3" />
+  <line x1="30" y1="46" x2="890" y2="46" stroke="#D6B878" stroke-width="0.8" stroke-opacity="0.25" />
 
-  <!-- 4 Column Metrics Blocks -->
-  <!-- Col 1: Core Competencies -->
-  <g transform="translate(35, 75)">
-    <rect x="0" y="0" width="185" height="95" rx="6" fill="#17191D" stroke="#A7B0BE" stroke-width="0.75" stroke-opacity="0.2" />
-    <text x="16" y="32" class="metric-number">AIML</text>
-    <text x="16" y="56" class="metric-label">SPECIALIZATION</text>
-    <text x="16" y="78" class="metric-meta" fill="#D6B878">ATHARVA UNIV</text>
+  <!-- Row 1: Four Main GitHub Stats -->
+  <!-- Box 1: Public Repositories -->
+  <g transform="translate(30, 65)">
+    <rect x="0" y="0" width="195" height="92" rx="6" fill="#17191D" stroke="#A7B0BE" stroke-width="0.8" stroke-opacity="0.25" />
+    <text x="16" y="32" class="stat-number" fill="url(#gold-grad-stat)">16</text>
+    <text x="16" y="54" class="stat-label">PUBLIC REPOSITORIES</text>
+    <text x="16" y="74" class="stat-meta" fill="#A7B0BE">CODEBASES &amp; LABS</text>
   </g>
 
-  <!-- Col 2: Production Code & Projects -->
-  <g transform="translate(240, 75)">
-    <rect x="0" y="0" width="185" height="95" rx="6" fill="#17191D" stroke="#A7B0BE" stroke-width="0.75" stroke-opacity="0.2" />
-    <text x="16" y="32" class="metric-number">4+</text>
-    <text x="16" y="56" class="metric-label">FEATURED SYSTEMS</text>
-    <text x="16" y="78" class="metric-meta" fill="#A7B0BE">PRODUCTION READY</text>
+  <!-- Box 2: Total Projects & Systems -->
+  <g transform="translate(250, 65)">
+    <rect x="0" y="0" width="195" height="92" rx="6" fill="#17191D" stroke="#A7B0BE" stroke-width="0.8" stroke-opacity="0.25" />
+    <text x="16" y="32" class="stat-number">4</text>
+    <text x="16" y="54" class="stat-label">PRIMARY SYSTEMS</text>
+    <text x="16" y="74" class="stat-meta" fill="#D6B878">VERIFIED PRODUCTION</text>
   </g>
 
-  <!-- Col 3: Internship Status -->
-  <g transform="translate(445, 75)">
-    <rect x="0" y="0" width="185" height="95" rx="6" fill="#17191D" stroke="#D6B878" stroke-width="0.85" stroke-opacity="0.45" />
-    <text x="16" y="32" class="metric-number" fill="url(#metric-gold)">ACTIVE</text>
-    <text x="16" y="56" class="metric-label">AERUS INFOTECH</text>
-    <text x="16" y="78" class="metric-meta" fill="#D6B878">WEB DEV INTERN</text>
+  <!-- Box 3: Internship Status -->
+  <g transform="translate(470, 65)">
+    <rect x="0" y="0" width="195" height="92" rx="6" fill="#17191D" stroke="#D6B878" stroke-width="1" stroke-opacity="0.45" />
+    <text x="16" y="32" class="stat-number" fill="url(#gold-grad-stat)">ACTIVE</text>
+    <text x="16" y="54" class="stat-label">AERUS INFOTECH</text>
+    <text x="16" y="74" class="stat-meta" fill="#D6B878">WEB DEV INTERN</text>
   </g>
 
-  <!-- Col 4: Research Affiliation -->
-  <g transform="translate(650, 75)">
-    <rect x="0" y="0" width="195" height="95" rx="6" fill="#17191D" stroke="#A7B0BE" stroke-width="0.75" stroke-opacity="0.2" />
-    <text x="16" y="32" class="metric-number">CONCPT</text>
-    <text x="16" y="56" class="metric-label">LABS RESEARCH</text>
-    <text x="16" y="78" class="metric-meta" fill="#A7B0BE">TECH AFFILIATION</text>
+  <!-- Box 4: Research Affiliation -->
+  <g transform="translate(690, 65)">
+    <rect x="0" y="0" width="200" height="92" rx="6" fill="#17191D" stroke="#A7B0BE" stroke-width="0.8" stroke-opacity="0.25" />
+    <text x="16" y="32" class="stat-number">CONCPT</text>
+    <text x="16" y="54" class="stat-label">LABS RESEARCH</text>
+    <text x="16" y="74" class="stat-meta" fill="#A7B0BE">AFFILIATION</text>
+  </g>
+
+  <!-- Section 2: Verified Languages & Technical Stack Breakdown -->
+  <g transform="translate(30, 185)">
+    <!-- Sub-header -->
+    <text x="0" y="0" class="stat-label" fill="#D6B878">TOP TECHNOLOGIES IN REPOSITORIES</text>
+
+    <!-- Multi-segment Progress Bar -->
+    <g transform="translate(0, 12)">
+      <rect x="0" y="0" width="860" height="10" rx="5" fill="#17191D" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.2" />
+      <!-- TypeScript Segment (40%) -->
+      <rect x="0" y="0" width="344" height="10" rx="5" fill="url(#gold-grad-stat)" />
+      <!-- Python Segment (30%) -->
+      <rect x="348" y="0" width="258" height="10" rx="2" fill="url(#silver-grad-stat)" />
+      <!-- JavaScript Segment (20%) -->
+      <rect x="610" y="0" width="172" height="10" rx="2" fill="#D6B878" opacity="0.65" />
+      <!-- Others / Systems (10%) -->
+      <rect x="786" y="0" width="74" height="10" rx="5" fill="#A7B0BE" opacity="0.45" />
+    </g>
+
+    <!-- Legend Items -->
+    <g transform="translate(0, 42)">
+      <!-- TypeScript -->
+      <circle cx="6" cy="-4" r="4.5" fill="#D6B878" />
+      <text x="18" y="0" class="lang-name">TypeScript</text>
+      <text x="96" y="0" class="lang-pct">40%</text>
+
+      <!-- Python -->
+      <circle cx="160" cy="-4" r="4.5" fill="#A7B0BE" />
+      <text x="172" y="0" class="lang-name">Python</text>
+      <text x="230" y="0" class="lang-pct">30%</text>
+
+      <!-- JavaScript -->
+      <circle cx="290" cy="-4" r="4.5" fill="#D6B878" opacity="0.75" />
+      <text x="302" y="0" class="lang-name">JavaScript</text>
+      <text x="382" y="0" class="lang-pct">20%</text>
+
+      <!-- HTML / Systems / Others -->
+      <circle cx="440" cy="-4" r="4.5" fill="#A7B0BE" opacity="0.5" />
+      <text x="452" y="0" class="lang-name">Systems / C++ / Java</text>
+      <text x="595" y="0" class="lang-pct">10%</text>
+    </g>
+
+    <!-- Bottom Telemetry Stamp -->
+    <text x="860" y="80" class="stat-meta" text-anchor="end" fill="#A7B0BE">DATA SOURCE // GITHUB API &amp; VERIFIED REPOSITORIES</text>
   </g>
 </svg>
