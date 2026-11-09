@@ -18,6 +18,12 @@ My engineering philosophy combines rigorous algorithmic thinking with clean, rob
 
 I am actively seeking **Software Engineering, AI/ML, and Data Science Internship** opportunities where I can apply my development skills and collaborate on impactful real-world software.
 
+<div align="center">
+  <a href="https://portfolio-beryl-phi-51.vercel.app">
+    <img src="https://img.shields.io/badge/Live_Portfolio-portfolio--beryl--phi--51.vercel.app-202124?style=for-the-badge&logo=googlechrome&logoColor=D6B878&labelColor=17191D" alt="Live Portfolio Website" />
+  </a>
+</div>
+
 ---
 
 ## 02. Technical Focus
@@ -141,6 +147,10 @@ I am actively seeking **Software Engineering, AI/ML, and Data Science Internship
 ## 08. Connect With Me
 
 <div align="center">
+  <a href="https://portfolio-beryl-phi-51.vercel.app">
+    <img src="https://img.shields.io/badge/Portfolio-Live_Site-202124?style=for-the-badge&logo=googlechrome&logoColor=D6B878&labelColor=17191D" alt="Portfolio Website" />
+  </a>
+  &nbsp;
   <a href="https://github.com/tejaskute284-dotcom">
     <img src="https://img.shields.io/badge/GitHub-tejaskute284--dotcom-202124?style=for-the-badge&logo=github&logoColor=D6B878&labelColor=17191D" alt="GitHub Profile" />
   </a>
