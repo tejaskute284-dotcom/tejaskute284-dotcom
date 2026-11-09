@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 200" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="metrics-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#17191D" />
+      <stop offset="50%" stop-color="#202124" />
+      <stop offset="100%" stop-color="#141518" />
+    </linearGradient>
+
+    <!-- Champagne Gold Gradient -->
+    <linearGradient id="metric-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F2DFB3" />
+      <stop offset="50%" stop-color="#D6B878" />
+      <stop offset="100%" stop-color="#B3934F" />
+    </linearGradient>
+
+    <!-- Muted Silver Gradient -->
+    <linearGradient id="metric-silver" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#DCE3ED" />
+      <stop offset="50%" stop-color="#A7B0BE" />
+      <stop offset="100%" stop-color="#737D8D" />
+    </linearGradient>
+
+    <pattern id="metrics-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.08" />
+    </pattern>
+
+    <style>
+      .metric-title {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        fill: #D6B878;
+        text-transform: uppercase;
+      }
+      .metric-number {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 28px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        fill: #F5F3ED;
+      }
+      .metric-label {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        fill: #A7B0BE;
+        text-transform: uppercase;
+      }
+      .metric-meta {
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        font-size: 10px;
+        letter-spacing: 1.2px;
+        fill: #A7B0BE;
+      }
+      @keyframes pulseNode {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
+      }
+      .node-pulse {
+        animation: pulseNode 3s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Card Background -->
+  <rect width="100%" height="100%" fill="url(#metrics-bg)" rx="10" />
+  <rect width="100%" height="100%" fill="url(#metrics-grid)" rx="10" />
+  <rect x="1" y="1" width="878" height="198" fill="none" stroke="#A7B0BE" stroke-width="1" stroke-opacity="0.22" rx="10" />
+
+  <!-- Top Status Bar -->
+  <g transform="translate(30, 32)">
+    <circle cx="0" cy="0" r="4" fill="#D6B878" class="node-pulse" />
+    <text x="12" y="4" class="metric-title">ENGINEERING ACTIVITY &amp; CONTRIBUTION MATRIX</text>
+    <text x="820" y="4" class="metric-meta" text-anchor="end">PROFILE // TEJASKUTE284-DOTCOM</text>
+  </g>
+
+  <!-- Horizontal Divider -->
+  <line x1="30" y1="48" x2="850" y2="48" stroke="#D6B878" stroke-width="0.8" stroke-opacity="0.3" />
+
+  <!-- 4 Column Metrics Blocks -->
+  <!-- Col 1: Core Competencies -->
+  <g transform="translate(35, 75)">
+    <rect x="0" y="0" width="185" height="95" rx="6" fill="#17191D" stroke="#A7B0BE" stroke-width="0.75" stroke-opacity="0.2" />
+    <text x="16" y="32" class="metric-number">AIML</text>
+    <text x="16" y="56" class="metric-label">SPECIALIZATION</text>
+    <text x="16" y="78" class="metric-meta" fill="#D6B878">ATHARVA UNIV</text>
+  </g>
+
+  <!-- Col 2: Production Code & Projects -->
+  <g transform="translate(240, 75)">
+    <rect x="0" y="0" width="185" height="95" rx="6" fill="#17191D" stroke="#A7B0BE" stroke-width="0.75" stroke-opacity="0.2" />
+    <text x="16" y="32" class="metric-number">4+</text>
+    <text x="16" y="56" class="metric-label">FEATURED SYSTEMS</text>
+    <text x="16" y="78" class="metric-meta" fill="#A7B0BE">PRODUCTION READY</text>
+  </g>
+
+  <!-- Col 3: Internship Status -->
+  <g transform="translate(445, 75)">
+    <rect x="0" y="0" width="185" height="95" rx="6" fill="#17191D" stroke="#D6B878" stroke-width="0.85" stroke-opacity="0.45" />
+    <text x="16" y="32" class="metric-number" fill="url(#metric-gold)">ACTIVE</text>
+    <text x="16" y="56" class="metric-label">AERUS INFOTECH</text>
+    <text x="16" y="78" class="metric-meta" fill="#D6B878">WEB DEV INTERN</text>
+  </g>
+
+  <!-- Col 4: Research Affiliation -->
+  <g transform="translate(650, 75)">
+    <rect x="0" y="0" width="195" height="95" rx="6" fill="#17191D" stroke="#A7B0BE" stroke-width="0.75" stroke-opacity="0.2" />
+    <text x="16" y="32" class="metric-number">CONCPT</text>
+    <text x="16" y="56" class="metric-label">LABS RESEARCH</text>
+    <text x="16" y="78" class="metric-meta" fill="#A7B0BE">TECH AFFILIATION</text>
+  </g>
+</svg>

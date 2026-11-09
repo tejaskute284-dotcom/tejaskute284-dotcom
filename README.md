@@ -43,48 +43,40 @@ I am actively seeking **Software Engineering, AI/ML, and Data Science Internship
 
 ## 03. Featured Projects
 
-### 1. **Vital-Cord — Full-Stack Clinical Healthcare Ecosystem**
-* **Problem Solved**: Addresses fragmented clinical data systems and medication compliance tracking by creating a unified patient-clinician communication hub.
-* **Technical Description**: Built with an enterprise-ready architecture comprising a Next.js/TypeScript frontend and a NestJS/PostgreSQL backend containerized via Docker. Integrates scheduled notification jobs, persistent patient medical history, and clinical telemetry visualization.
-* **Contribution**: Full-stack architecture, database modeling with Prisma/PostgreSQL, authentication guards, and interactive health-pulse metrics dashboards.
-* **Tech Stack**: Next.js, React, TypeScript, NestJS, PostgreSQL, Prisma ORM, Docker, Tailwind CSS.
-* **Repository**: [tejaskute284-dotcom/vital-cord](https://github.com/tejaskute284-dotcom/vital-cord)
+### 1. **Internship Project — Enterprise Web Application Systems**
+* **Organization**: Aerus Infotech
+* **Problem Solved**: High-concurrency client workflows and modular component architectures requiring minimal latency and strict data integrity.
+* **Technical Description**: Enterprise web application platform engineering with robust client-facing interfaces, reactive state management, asynchronous REST integration, and cross-browser optimized responsiveness.
+* **Contribution**: Engineered interactive frontend views, designed clean reusable UI components, and collaborated on end-to-end API integration and client-side validation logic.
+* **Tech Stack**: JavaScript (ES6+), React.js, HTML5, CSS3, RESTful APIs, Git.
+* **Repository**: [Aerus Infotech Internship Workspace](https://github.com/tejaskute284-dotcom)
 
 ---
 
 ### 2. **SatyaSetu — AI Credentialing &amp; Forensic Document Verification**
-* **Problem Solved**: Prevents forged academic credentials, fraudulent legal documents, and unverified certificates through automated digital forensics.
-* **Technical Description**: An intelligent credential verification pipeline that inspects digital assets, cross-verifies digital signatures, and applies neural classification algorithms to detect tampering and anomalies.
-* **Contribution**: Designed verification logic, document ingestion flow, and integrated automated cryptographic hashing for certificate validation.
+* **Problem Solved**: Mitigates digital certificate tampering, fraudulent academic credentials, and unverified documentation through intelligent forensic analysis.
+* **Technical Description**: An intelligent credential forensics platform combining neural classification, cryptographic hash verification, and automated tamper-detection pipelines to provide instant, tamper-proof document validation.
+* **Contribution**: Developed the forensic document ingestion architecture, integrated cryptographic validation mechanisms, and structured the verification REST endpoints.
 * **Tech Stack**: Python, Computer Vision, FastAPI/Flask, Cryptography, RESTful APIs.
 * **Repository**: [SatyaSetu Project Repository](https://github.com/tejaskute284-dotcom)
 
 ---
 
-### 3. **CivicFix — AI Civic Infrastructure Intelligence &amp; Complaint Routing**
-* **Problem Solved**: Eliminates slow municipal issue resolution by automating the categorization, deduplication, and routing of urban civic complaints.
-* **Technical Description**: Enables citizens to report urban infrastructure failures (potholes, water leaks, electrical hazards). Computer vision models analyze uploaded imagery, identify hazard severity, cluster duplicate nearby tickets, and route actionable alerts to municipal departments.
-* **Contribution**: Developed issue classification pipelines, geospatial incident clustering, and responsive ticket lifecycle tracking interfaces.
-* **Tech Stack**: Python, Computer Vision, JavaScript, Leaflet / Geospatial APIs, REST APIs.
-* **Repository**: [CivicFix Project Repository](https://github.com/tejaskute284-dotcom)
+### 3. **CryoNex — Cold-Chain Telemetry &amp; Pharma Compliance Console**
+* **Problem Solved**: Prevents temperature breaches and spoilage in cold-chain pharmaceutical shipments through unified telemetry tracking and regulatory auditing.
+* **Technical Description**: A high-precision monitoring dashboard featuring interactive telemetry mapping, multi-step shipment dispatch wizards, vault security controls, and GxP regulatory compliance logging.
+* **Contribution**: Implemented interactive telemetry views, automated wizard dispatch workflows, multi-role security guards, and animated data monitoring visualizations.
+* **Tech Stack**: JavaScript (ES6+), Chart.js, HTML5, CSS3 / Tailwind, Map Engine, Anime.js.
+* **Repository**: [CryoNex Project Repository](https://github.com/tejaskute284-dotcom)
 
 ---
 
-### 4. **IHMS v2 — Integrated Healthcare Management System**
-* **Problem Solved**: Bridges the usability gap between high-density medical diagnostics for doctors and accessible health dashboards for patients.
-* **Technical Description**: A dual-interface healthcare portal built with a single-page application (SPA) architecture. Features a command-center clinician interface and a patient adherence portal equipped with dynamic real-time vitals tracking.
-* **Contribution**: Engineered the client-side SPA router, state container, medical adherence tracking, and dynamic Chart.js vital monitoring components.
-* **Tech Stack**: JavaScript (ES6+), HTML5, CSS3, Chart.js, SPA Architecture.
-* **Repository**: [tejaskute284-dotcom/ihms-v2](https://github.com/tejaskute284-dotcom)
-
----
-
-### 5. **Library Management System — Desktop OOP Application**
-* **Problem Solved**: Demonstrates foundational computer science software architecture through modular book transactions, member indexing, and persistent storage.
-* **Technical Description**: A desktop management system programmed strictly adhering to core Object-Oriented Design principles (Encapsulation, Polymorphism, Inheritance, Abstraction) with flat dark-mode Java Swing GUI and structured file persistence.
-* **Contribution**: Designed OOP class hierarchy (`Book`, `Member`, `Transaction`), implemented transactional rollback logic, and built the custom Java Swing interface.
-* **Tech Stack**: Java, Java Swing, OOP Architecture, File I/O Persistence.
-* **Repository**: [tejaskute284-dotcom/library-management-system](https://github.com/tejaskute284-dotcom)
+### 4. **FlowState — Developer Cognitive Workflow &amp; Task Orchestrator**
+* **Problem Solved**: Enhances developer deep-work efficiency by reducing context switching and intelligently structuring execution pipelines.
+* **Technical Description**: A focused productivity and development orchestrator that tracks cognitive sessions, automates milestone delivery, and manages context-aware developer priorities.
+* **Contribution**: Designed the state synchronization engine, modular task decomposition system, and minimal distraction-free developer interface.
+* **Tech Stack**: TypeScript, React / Next.js, Node.js, Tailwind CSS, Local Persistence.
+* **Repository**: [FlowState Project Repository](https://github.com/tejaskute284-dotcom)
 
 ---
 
@@ -131,7 +123,7 @@ I am actively seeking **Software Engineering, AI/ML, and Data Science Internship
 
 ## 06. Verified Hackathons &amp; Achievements
 
-* **Smart India Hackathon (SIH) Participant / Ideator** &mdash; Team lead and contributor on automated civic analytics and intelligent problem management platforms.
+* **Smart India Hackathon (SIH) Participant / Ideator** &mdash; Team contributor on automated civic analytics and intelligent problem management platforms.
 * **Open Source Contributor &amp; Technical Builder** &mdash; Active participant in technical symposiums, hackathons, and student engineering development initiatives.
 
 ---
@@ -139,9 +131,7 @@ I am actively seeking **Software Engineering, AI/ML, and Data Science Internship
 ## 07. GitHub Contributions &amp; Statistics
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=tejaskute284-dotcom&show_icons=true&theme=dark&bg_color=202124&title_color=D6B878&text_color=F5F3ED&icon_color=A7B0BE&border_color=A7B0BE33" alt="Tejas Kute GitHub Stats" height="155px" />
-  &nbsp;&nbsp;
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=tejaskute284-dotcom&layout=compact&theme=dark&bg_color=202124&title_color=D6B878&text_color=F5F3ED&border_color=A7B0BE33" alt="Top Languages" height="155px" />
+  <img src="assets/github-metrics.svg" alt="Tejas Kute Engineering &amp; Contribution Metrics" width="100%" />
 </div>
 
 <br/>
