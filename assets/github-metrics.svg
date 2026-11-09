@@ -111,9 +111,9 @@
   <!-- Box 3: Internship Status -->
   <g transform="translate(470, 65)">
     <rect x="0" y="0" width="195" height="92" rx="6" fill="#17191D" stroke="#D6B878" stroke-width="1" stroke-opacity="0.45" />
-    <text x="16" y="32" class="stat-number" fill="url(#gold-grad-stat)">ACTIVE</text>
+    <text x="16" y="32" class="stat-number" fill="url(#gold-grad-stat)" font-size="22px">COMPLETED</text>
     <text x="16" y="54" class="stat-label">AERUS INFOTECH</text>
-    <text x="16" y="74" class="stat-meta" fill="#D6B878">WEB DEV INTERN</text>
+    <text x="16" y="74" class="stat-meta" fill="#D6B878">FORMER INTERN</text>
   </g>
 
   <!-- Box 4: Research Affiliation -->

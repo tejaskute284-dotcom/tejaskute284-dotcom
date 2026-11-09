@@ -70,7 +70,7 @@
   <g transform="translate(35, 75)">
     <rect x="0" y="-18" width="160" height="34" rx="4" fill="#17191D" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.2" />
     <text x="18" y="4" class="label-cell">Internship</text>
-    <text x="185" y="4" class="value-cell">Aerus Infotech Pvt Limited <tspan fill="#A7B0BE" font-size="12px">&#x2014; Web Development Intern</tspan></text>
+    <text x="185" y="4" class="value-cell">Aerus Infotech Pvt Limited <tspan fill="#D6B878" font-size="12px">&#x2014; Web Development Intern (Completed)</tspan></text>
   </g>
   <line x1="35" y1="100" x2="845" y2="100" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
 

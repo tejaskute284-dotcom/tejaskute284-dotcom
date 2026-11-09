@@ -12,7 +12,7 @@
 
 ## 01. Professional Introduction
 
-I am **Tejas Kute**, a second-year Bachelor of Technology student specializing in **Artificial Intelligence and Machine Learning (Semester 3)** at **Atharva University, Mumbai**. As a **Web Development Intern at Aerus Infotech Pvt Limited** and a technical researcher affiliated with **CONCPT Labs**, I focus on building high-reliability full-stack web platforms, investigating intelligent neural systems, and exploring modern cybersecurity architecture.
+I am **Tejas Kute**, a second-year Bachelor of Technology student specializing in **Artificial Intelligence and Machine Learning (Semester 3)** at **Atharva University, Mumbai**. Having completed my **Web Development Internship at Aerus Infotech Pvt Limited** and as a technical researcher affiliated with **CONCPT Labs**, I focus on building high-reliability full-stack web platforms, investigating intelligent neural systems, and exploring modern cybersecurity architecture.
 
 My engineering philosophy combines rigorous algorithmic thinking with clean, robust implementation. Whether designing predictive data pipelines, engineering distributed web backends, or auditing application security boundaries, I build practical software systems that translate theoretical computer science into production-grade solutions.
 
@@ -125,9 +125,9 @@ I am actively seeking **Winter 2026 Internships** in **Software Engineering, AI/
 
 ## 05. Experience &amp; Affiliations
 
-* **Web Development Intern** &mdash; *Aerus Infotech Pvt Limited*
+* **Web Development Intern (Completed)** &mdash; *Aerus Infotech Pvt Limited*
   * Developed and tested responsive web application modules and front-end user interfaces.
-  * Collaborated with team members (**Shreya Desai**, **Aaryan Raorane**) on software architecture, client requirements, and interface performance.
+  * Successfully delivered project requirements and collaborated with team members (**Shreya Desai**, **Aaryan Raorane**) on software architecture, client requirements, and interface performance.
 
 * **Technical Researcher &amp; Contributor** &mdash; *CONCPT Labs*
   * Participated in applied technology exploration, research prototyping, and advanced software tooling investigations.
