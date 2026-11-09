@@ -1,766 +1,319 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 420" width="100%" height="100%">
   <defs>
-    <linearGradient id="city-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#17191D" />
-      <stop offset="50%" stop-color="#202124" />
-      <stop offset="100%" stop-color="#111215" />
+    <!-- Background Canvas Deep Charcoal / Near-Black Palette (#111318) -->
+    <linearGradient id="universe-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E1014" />
+      <stop offset="45%" stop-color="#111318" />
+      <stop offset="85%" stop-color="#16181F" />
+      <stop offset="100%" stop-color="#0B0C0F" />
     </linearGradient>
-    <linearGradient id="g-gold-top" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F7EACD"/><stop offset="100%" stop-color="#D6B878"/></linearGradient>
-    <linearGradient id="g-gold-left" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#C5A45F"/><stop offset="100%" stop-color="#997C3E"/></linearGradient>
-    <linearGradient id="g-gold-right" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#8F7135"/><stop offset="100%" stop-color="#6E5624"/></linearGradient>
-    <linearGradient id="g-silver-top" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#EEF3FA"/><stop offset="100%" stop-color="#A7B0BE"/></linearGradient>
-    <linearGradient id="g-silver-left" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#909AA9"/><stop offset="100%" stop-color="#6F7987"/></linearGradient>
-    <linearGradient id="g-silver-right" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#5E6775"/><stop offset="100%" stop-color="#484F5C"/></linearGradient>
-    <linearGradient id="g-dark-top" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2C2E34"/><stop offset="100%" stop-color="#232429"/></linearGradient>
-    <linearGradient id="g-dark-left" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#1E1F23"/><stop offset="100%" stop-color="#17181C"/></linearGradient>
-    <linearGradient id="g-dark-right" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#151619"/><stop offset="100%" stop-color="#111214"/></linearGradient>
-    <pattern id="bg-grid-city" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M 24 0 L 0 0 0 24" fill="none" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.06" /></pattern>
+
+    <!-- Metallic Champagne Gold -->
+    <linearGradient id="gold-metallic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5DE" />
+      <stop offset="35%" stop-color="#F2DFB3" />
+      <stop offset="65%" stop-color="#D6B878" />
+      <stop offset="100%" stop-color="#917232" />
+    </linearGradient>
+
+    <!-- Liquid Metallic Silver -->
+    <linearGradient id="silver-metallic" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="40%" stop-color="#E2E7EE" />
+      <stop offset="75%" stop-color="#A7B0BE" />
+      <stop offset="100%" stop-color="#555E6B" />
+    </linearGradient>
+
+    <!-- Subtle Electric Blue Gradient -->
+    <linearGradient id="electric-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0F2FE" />
+      <stop offset="30%" stop-color="#7DD3FC" />
+      <stop offset="70%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+
+    <!-- Radial Holographic Sphere Volumetric Glow -->
+    <radialGradient id="hologram-core" cx="45%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="18%" stop-color="#F2DFB3" stop-opacity="0.85" />
+      <stop offset="42%" stop-color="#D6B878" stop-opacity="0.65" />
+      <stop offset="70%" stop-color="#38BDF8" stop-opacity="0.35" />
+      <stop offset="88%" stop-color="#111318" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#111318" stop-opacity="1" />
+    </radialGradient>
+
+    <!-- Ambient Core Nebula Glow -->
+    <radialGradient id="nebula-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D6B878" stop-opacity="0.25" />
+      <stop offset="35%" stop-color="#38BDF8" stop-opacity="0.16" />
+      <stop offset="65%" stop-color="#A7B0BE" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#111318" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Subtle Technical Background Grid -->
+    <pattern id="bg-grid-universe" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.05" />
+    </pattern>
+
+    <!-- Subtle Glow Filters -->
+    <filter id="soft-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="core-bloom" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur1" />
+      <feGaussianBlur stdDeviation="3" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur1" />
+        <feMergeNode in="blur2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
     <style>
-      .city-title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 2.5px; fill: #D6B878; text-transform: uppercase; }
-      .city-meta { font-family: "SFMono-Regular", Consolas, Menlo, monospace; font-size: 10px; letter-spacing: 1.2px; fill: #A7B0BE; }
-      @keyframes bFloat1 { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-7px); } }
-      @keyframes bFloat2 { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-11px); } }
-      @keyframes bFloat3 { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-9px); } }
-      .anim-p1 { animation: bFloat1 3.8s ease-in-out infinite; }
-      .anim-p2 { animation: bFloat2 4.4s ease-in-out infinite 0.7s; }
-      .anim-p3 { animation: bFloat3 4.1s ease-in-out infinite 1.4s; }
+      .hdr-title {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        fill: #D6B878;
+        text-transform: uppercase;
+      }
+      .hdr-meta {
+        font-family: "SFMono-Regular", Consolas, Menlo, monospace;
+        font-size: 10px;
+        letter-spacing: 1.2px;
+        fill: #A7B0BE;
+      }
+      .legend-lbl {
+        font-family: "SFMono-Regular", Consolas, Menlo, monospace;
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+
+      /* 60 FPS Keyframe Animations */
+      @keyframes rotClockwise {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes rotCounter {
+        0% { transform: rotate(360deg); }
+        100% { transform: rotate(0deg); }
+      }
+      @keyframes pulseCore {
+        0%, 100% { transform: scale(1); opacity: 0.88; }
+        50% { transform: scale(1.08); opacity: 1; }
+      }
+      @keyframes orbitPulse {
+        0% { stroke-dashoffset: 800; opacity: 0.3; }
+        50% { opacity: 0.95; }
+        100% { stroke-dashoffset: 0; opacity: 0.3; }
+      }
+      @keyframes particleFloatA {
+        0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.4; }
+        50% { transform: translateY(-14px) translateX(8px); opacity: 0.9; }
+      }
+      @keyframes particleFloatB {
+        0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+        50% { transform: translateY(-10px) translateX(-7px); opacity: 0.85; }
+      }
+      @keyframes nodeFlicker {
+        0%, 100% { opacity: 0.45; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.35); }
+      }
+      @keyframes photonTraveling {
+        0% { transform: translate(-180px, 0px) scale(0.6); opacity: 0; }
+        20% { opacity: 1; }
+        80% { opacity: 1; }
+        100% { transform: translate(180px, 0px) scale(0.6); opacity: 0; }
+      }
+
+      /* Classes */
+      .anim-rot-cw-slow { animation: rotClockwise 45s linear infinite; transform-origin: center; }
+      .anim-rot-cw-mid  { animation: rotClockwise 28s linear infinite; transform-origin: center; }
+      .anim-rot-ccw-mid { animation: rotCounter 34s linear infinite; transform-origin: center; }
+      .anim-rot-ccw-fast { animation: rotCounter 20s linear infinite; transform-origin: center; }
+      .anim-pulse-core  { animation: pulseCore 5.5s ease-in-out infinite; transform-origin: center; }
+      .anim-pulse-line  { stroke-dasharray: 60 220; animation: orbitPulse 8s linear infinite; }
+      .anim-pulse-line-rev { stroke-dasharray: 40 180; animation: orbitPulse 6s linear infinite reverse; }
+      .anim-float-a     { animation: particleFloatA 6s ease-in-out infinite; }
+      .anim-float-b     { animation: particleFloatB 8s ease-in-out infinite 1.2s; }
+      .anim-node-1      { animation: nodeFlicker 3.2s ease-in-out infinite; transform-origin: center; }
+      .anim-node-2      { animation: nodeFlicker 4.1s ease-in-out infinite 1s; transform-origin: center; }
+      .anim-node-3      { animation: nodeFlicker 3.7s ease-in-out infinite 2.2s; transform-origin: center; }
     </style>
   </defs>
-  <rect width="100%" height="100%" fill="url(#city-bg)" rx="10" />
-  <rect width="100%" height="100%" fill="url(#bg-grid-city)" rx="10" />
+
+  <!-- Canvas Card Base -->
+  <rect width="100%" height="100%" fill="url(#universe-bg)" rx="10" />
+  <rect width="100%" height="100%" fill="url(#bg-grid-universe)" rx="10" />
   <rect x="1" y="1" width="938" height="418" fill="none" stroke="#A7B0BE" stroke-width="1" stroke-opacity="0.2" rx="10" />
+
+  <!-- Card Header Telemetry -->
   <g transform="translate(30, 28)">
-    <circle cx="0" cy="0" r="4" fill="#D6B878" />
-    <text x="14" y="4" class="city-title">3D ISOMETRIC CONTRIBUTION MONOLITH // HIGH-DENSITY CITY</text>
-    <text x="880" y="4" class="city-meta" text-anchor="end">LIVE TELEMETRY &#x2022; 2026</text>
+    <circle cx="0" cy="0" r="4.5" fill="#D6B878" filter="url(#soft-glow)" />
+    <text x="14" y="4" class="hdr-title">3D HOLOGRAPHIC DIGITAL UNIVERSE // NEURAL COMPUTATIONAL SPHERE</text>
+    <text x="880" y="4" class="hdr-meta" text-anchor="end">LIVE TELEMETRY &#x2022; 2026</text>
   </g>
   <line x1="30" y1="44" x2="910" y2="44" stroke="#D6B878" stroke-width="0.8" stroke-opacity="0.25" />
-  <g transform="translate(470, 185)">
-    <g transform="translate(-136.5, -143.8)">
-      <polygon points="0,-24.0 16,-15.0 0,-6.0 -16,-15.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-15.0 0,-6.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-6.0 16,-15.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-115.5, -132.2)">
-      <polygon points="0,-29.0 16,-20.0 0,-11.0 -16,-20.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-20.0 0,-11.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-11.0 16,-20.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-94.5, -120.8)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-73.5, -109.2)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-52.5, -97.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-31.5, -86.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-10.5, -74.8)">
-      <polygon points="0,-26.0 16,-17.0 0,-8.0 -16,-17.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-17.0 0,-8.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-8.0 16,-17.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(10.5, -63.2)">
-      <polygon points="0,-31.0 16,-22.0 0,-13.0 -16,-22.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-22.0 0,-13.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-13.0 16,-22.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(31.5, -51.8)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(52.5, -40.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(73.5, -28.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(94.5, -17.2)" class="anim-p1">
-      <polygon points="0,-31.0 16,-22.0 0,-13.0 -16,-22.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-22.0 0,-13.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-13.0 16,-22.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(115.5, -5.8)" class="anim-p1">
-      <polygon points="0,-32.0 16,-23.0 0,-14.0 -16,-23.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-23.0 0,-14.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-14.0 16,-23.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(136.5, 5.8)">
-      <polygon points="0,-33.0 16,-24.0 0,-15.0 -16,-24.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-24.0 0,-15.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-15.0 16,-24.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(157.5, 17.2)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(178.5, 28.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(199.5, 40.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(220.5, 51.8)" class="anim-p1">
-      <polygon points="0,-33.0 16,-24.0 0,-15.0 -16,-24.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-24.0 0,-15.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-15.0 16,-24.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(241.5, 63.2)" class="anim-p1">
-      <polygon points="0,-34.0 16,-25.0 0,-16.0 -16,-25.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-25.0 0,-16.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-16.0 16,-25.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(262.5, 74.8)">
-      <polygon points="0,-35.0 16,-26.0 0,-17.0 -16,-26.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-26.0 0,-17.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-17.0 16,-26.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-157.5, -132.2)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-136.5, -120.8)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-115.5, -109.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-94.5, -97.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-73.5, -86.2)">
-      <polygon points="0,-23.0 16,-14.0 0,-5.0 -16,-14.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-14.0 0,-5.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-5.0 16,-14.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-52.5, -74.8)">
-      <polygon points="0,-28.0 16,-19.0 0,-10.0 -16,-19.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-19.0 0,-10.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-10.0 16,-19.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-31.5, -63.2)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-10.5, -51.8)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(10.5, -40.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(31.5, -28.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(52.5, -17.2)" class="anim-p1">
-      <polygon points="0,-45.0 16,-36.0 0,-27.0 -16,-36.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-36.0 0,-27.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-27.0 16,-36.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(73.5, -5.8)">
-      <polygon points="0,-46.0 16,-37.0 0,-28.0 -16,-37.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-37.0 0,-28.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-28.0 16,-37.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(94.5, 5.8)">
-      <polygon points="0,-31.0 16,-22.0 0,-13.0 -16,-22.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-22.0 0,-13.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-13.0 16,-22.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(115.5, 17.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(136.5, 28.8)" class="anim-p3">
-      <polygon points="0,-47.0 16,-38.0 0,-29.0 -16,-38.0" fill="url(#g-gold-top)" stroke="#F2DFB3" stroke-width="0.5" stroke-opacity="0.7" />
-      <polygon points="-16,-38.0 0,-29.0 0,9 -16,0" fill="url(#g-gold-left)" />
-      <polygon points="0,-29.0 16,-38.0 16,0 0,9" fill="url(#g-gold-right)" />
-      <circle cx="0" cy="-38.0" r="1.8" fill="#FFFFFF" />
-    </g>
-    <g transform="translate(157.5, 40.2)" class="anim-p1">
-      <polygon points="0,-54.0 16,-45.0 0,-36.0 -16,-45.0" fill="url(#g-gold-top)" stroke="#F2DFB3" stroke-width="0.5" stroke-opacity="0.7" />
-      <polygon points="-16,-45.0 0,-36.0 0,9 -16,0" fill="url(#g-gold-left)" />
-      <polygon points="0,-36.0 16,-45.0 16,0 0,9" fill="url(#g-gold-right)" />
-      <circle cx="0" cy="-45.0" r="1.8" fill="#FFFFFF" />
-    </g>
-    <g transform="translate(178.5, 51.8)" class="anim-p2">
-      <polygon points="0,-61.0 16,-52.0 0,-43.0 -16,-52.0" fill="url(#g-gold-top)" stroke="#F2DFB3" stroke-width="0.5" stroke-opacity="0.7" />
-      <polygon points="-16,-52.0 0,-43.0 0,9 -16,0" fill="url(#g-gold-left)" />
-      <polygon points="0,-43.0 16,-52.0 16,0 0,9" fill="url(#g-gold-right)" />
-      <circle cx="0" cy="-52.0" r="1.8" fill="#FFFFFF" />
-    </g>
-    <g transform="translate(199.5, 63.2)" class="anim-p3">
-      <polygon points="0,-68.0 16,-59.0 0,-50.0 -16,-59.0" fill="url(#g-gold-top)" stroke="#F2DFB3" stroke-width="0.5" stroke-opacity="0.7" />
-      <polygon points="-16,-59.0 0,-50.0 0,9 -16,0" fill="url(#g-gold-left)" />
-      <polygon points="0,-50.0 16,-59.0 16,0 0,9" fill="url(#g-gold-right)" />
-      <circle cx="0" cy="-59.0" r="1.8" fill="#FFFFFF" />
-    </g>
-    <g transform="translate(220.5, 74.8)" class="anim-p1">
-      <polygon points="0,-51.0 16,-42.0 0,-33.0 -16,-42.0" fill="url(#g-gold-top)" stroke="#F2DFB3" stroke-width="0.5" stroke-opacity="0.7" />
-      <polygon points="-16,-42.0 0,-33.0 0,9 -16,0" fill="url(#g-gold-left)" />
-      <polygon points="0,-33.0 16,-42.0 16,0 0,9" fill="url(#g-gold-right)" />
-      <circle cx="0" cy="-42.0" r="1.8" fill="#FFFFFF" />
-    </g>
-    <g transform="translate(241.5, 86.2)" class="anim-p2">
-      <polygon points="0,-58.0 16,-49.0 0,-40.0 -16,-49.0" fill="url(#g-gold-top)" stroke="#F2DFB3" stroke-width="0.5" stroke-opacity="0.7" />
-      <polygon points="-16,-49.0 0,-40.0 0,9 -16,0" fill="url(#g-gold-left)" />
-      <polygon points="0,-40.0 16,-49.0 16,0 0,9" fill="url(#g-gold-right)" />
-      <circle cx="0" cy="-49.0" r="1.8" fill="#FFFFFF" />
-    </g>
-    <g transform="translate(-178.5, -120.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-157.5, -109.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-136.5, -97.8)">
-      <polygon points="0,-32.0 16,-23.0 0,-14.0 -16,-23.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-23.0 0,-14.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-14.0 16,-23.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-115.5, -86.2)">
-      <polygon points="0,-25.0 16,-16.0 0,-7.0 -16,-16.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-16.0 0,-7.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-7.0 16,-16.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-94.5, -74.8)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-73.5, -63.2)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-52.5, -51.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-31.5, -40.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-10.5, -28.8)">
-      <polygon points="0,-34.0 16,-25.0 0,-16.0 -16,-25.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-25.0 0,-16.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-16.0 16,-25.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(10.5, -17.2)">
-      <polygon points="0,-27.0 16,-18.0 0,-9.0 -16,-18.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-18.0 0,-9.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-9.0 16,-18.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(31.5, -5.8)">
-      <polygon points="0,-44.0 16,-35.0 0,-26.0 -16,-35.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-35.0 0,-26.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-26.0 16,-35.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(52.5, 5.8)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(73.5, 17.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(94.5, 28.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(115.5, 40.2)" class="anim-p1">
-      <polygon points="0,-44.0 16,-35.0 0,-26.0 -16,-35.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-35.0 0,-26.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-26.0 16,-35.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(136.5, 51.8)">
-      <polygon points="0,-45.0 16,-36.0 0,-27.0 -16,-36.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-36.0 0,-27.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-27.0 16,-36.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(157.5, 63.2)">
-      <polygon points="0,-46.0 16,-37.0 0,-28.0 -16,-37.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-37.0 0,-28.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-28.0 16,-37.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(178.5, 74.8)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(199.5, 86.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(220.5, 97.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-199.5, -109.2)">
-      <polygon points="0,-29.0 16,-20.0 0,-11.0 -16,-20.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-20.0 0,-11.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-11.0 16,-20.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-178.5, -97.8)">
-      <polygon points="0,-34.0 16,-25.0 0,-16.0 -16,-25.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-25.0 0,-16.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-16.0 16,-25.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-157.5, -86.2)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-136.5, -74.8)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-115.5, -63.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-94.5, -51.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-73.5, -40.2)">
-      <polygon points="0,-31.0 16,-22.0 0,-13.0 -16,-22.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-22.0 0,-13.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-13.0 16,-22.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-52.5, -28.8)">
-      <polygon points="0,-24.0 16,-15.0 0,-6.0 -16,-15.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-15.0 0,-6.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-6.0 16,-15.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-31.5, -17.2)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-10.5, -5.8)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(10.5, 5.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(31.5, 17.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(52.5, 28.8)" class="anim-p1">
-      <polygon points="0,-41.0 16,-32.0 0,-23.0 -16,-32.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-32.0 0,-23.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-23.0 16,-32.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(73.5, 40.2)">
-      <polygon points="0,-42.0 16,-33.0 0,-24.0 -16,-33.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-33.0 0,-24.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-24.0 16,-33.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(94.5, 51.8)" class="anim-p3">
-      <polygon points="0,-47.0 16,-38.0 0,-29.0 -16,-38.0" fill="url(#g-gold-top)" stroke="#F2DFB3" stroke-width="0.5" stroke-opacity="0.7" />
-      <polygon points="-16,-38.0 0,-29.0 0,9 -16,0" fill="url(#g-gold-left)" />
-      <polygon points="0,-29.0 16,-38.0 16,0 0,9" fill="url(#g-gold-right)" />
-      <circle cx="0" cy="-38.0" r="1.8" fill="#FFFFFF" />
-    </g>
-    <g transform="translate(115.5, 63.2)" class="anim-p1">
-      <polygon points="0,-54.0 16,-45.0 0,-36.0 -16,-45.0" fill="url(#g-gold-top)" stroke="#F2DFB3" stroke-width="0.5" stroke-opacity="0.7" />
-      <polygon points="-16,-45.0 0,-36.0 0,9 -16,0" fill="url(#g-gold-left)" />
-      <polygon points="0,-36.0 16,-45.0 16,0 0,9" fill="url(#g-gold-right)" />
-      <circle cx="0" cy="-45.0" r="1.8" fill="#FFFFFF" />
-    </g>
-    <g transform="translate(136.5, 74.8)" class="anim-p2">
-      <polygon points="0,-61.0 16,-52.0 0,-43.0 -16,-52.0" fill="url(#g-gold-top)" stroke="#F2DFB3" stroke-width="0.5" stroke-opacity="0.7" />
-      <polygon points="-16,-52.0 0,-43.0 0,9 -16,0" fill="url(#g-gold-left)" />
-      <polygon points="0,-43.0 16,-52.0 16,0 0,9" fill="url(#g-gold-right)" />
-      <circle cx="0" cy="-52.0" r="1.8" fill="#FFFFFF" />
-    </g>
-    <g transform="translate(157.5, 86.2)" class="anim-p3">
-      <polygon points="0,-68.0 16,-59.0 0,-50.0 -16,-59.0" fill="url(#g-gold-top)" stroke="#F2DFB3" stroke-width="0.5" stroke-opacity="0.7" />
-      <polygon points="-16,-59.0 0,-50.0 0,9 -16,0" fill="url(#g-gold-left)" />
-      <polygon points="0,-50.0 16,-59.0 16,0 0,9" fill="url(#g-gold-right)" />
-      <circle cx="0" cy="-59.0" r="1.8" fill="#FFFFFF" />
-    </g>
-    <g transform="translate(178.5, 97.8)" class="anim-p1">
-      <polygon points="0,-51.0 16,-42.0 0,-33.0 -16,-42.0" fill="url(#g-gold-top)" stroke="#F2DFB3" stroke-width="0.5" stroke-opacity="0.7" />
-      <polygon points="-16,-42.0 0,-33.0 0,9 -16,0" fill="url(#g-gold-left)" />
-      <polygon points="0,-33.0 16,-42.0 16,0 0,9" fill="url(#g-gold-right)" />
-      <circle cx="0" cy="-42.0" r="1.8" fill="#FFFFFF" />
-    </g>
-    <g transform="translate(199.5, 109.2)" class="anim-p2">
-      <polygon points="0,-58.0 16,-49.0 0,-40.0 -16,-49.0" fill="url(#g-gold-top)" stroke="#F2DFB3" stroke-width="0.5" stroke-opacity="0.7" />
-      <polygon points="-16,-49.0 0,-40.0 0,9 -16,0" fill="url(#g-gold-left)" />
-      <polygon points="0,-40.0 16,-49.0 16,0 0,9" fill="url(#g-gold-right)" />
-      <circle cx="0" cy="-49.0" r="1.8" fill="#FFFFFF" />
-    </g>
-    <g transform="translate(-220.5, -97.8)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-199.5, -86.2)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-178.5, -74.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-157.5, -63.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-136.5, -51.8)">
-      <polygon points="0,-28.0 16,-19.0 0,-10.0 -16,-19.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-19.0 0,-10.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-10.0 16,-19.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-115.5, -40.2)">
-      <polygon points="0,-33.0 16,-24.0 0,-15.0 -16,-24.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-24.0 0,-15.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-15.0 16,-24.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-94.5, -28.8)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-73.5, -17.2)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-52.5, -5.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-31.5, 5.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-10.5, 17.2)" class="anim-p1">
-      <polygon points="0,-38.0 16,-29.0 0,-20.0 -16,-29.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-29.0 0,-20.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-20.0 16,-29.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(10.5, 28.8)" class="anim-p1">
-      <polygon points="0,-39.0 16,-30.0 0,-21.0 -16,-30.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-30.0 0,-21.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-21.0 16,-30.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(31.5, 40.2)">
-      <polygon points="0,-40.0 16,-31.0 0,-22.0 -16,-31.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-31.0 0,-22.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-22.0 16,-31.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(52.5, 51.8)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(73.5, 63.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(94.5, 74.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(115.5, 86.2)" class="anim-p1">
-      <polygon points="0,-40.0 16,-31.0 0,-22.0 -16,-31.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-31.0 0,-22.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-22.0 16,-31.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(136.5, 97.8)">
-      <polygon points="0,-41.0 16,-32.0 0,-23.0 -16,-32.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-32.0 0,-23.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-23.0 16,-32.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(157.5, 109.2)">
-      <polygon points="0,-42.0 16,-33.0 0,-24.0 -16,-33.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-33.0 0,-24.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-24.0 16,-33.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(178.5, 120.8)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-241.5, -86.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-220.5, -74.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-199.5, -63.2)">
-      <polygon points="0,-25.0 16,-16.0 0,-7.0 -16,-16.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-16.0 0,-7.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-7.0 16,-16.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-178.5, -51.8)">
-      <polygon points="0,-30.0 16,-21.0 0,-12.0 -16,-21.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-21.0 0,-12.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-12.0 16,-21.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-157.5, -40.2)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-136.5, -28.8)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-115.5, -17.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-94.5, -5.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-73.5, 5.8)">
-      <polygon points="0,-27.0 16,-18.0 0,-9.0 -16,-18.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-18.0 0,-9.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-9.0 16,-18.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-52.5, 17.2)">
-      <polygon points="0,-32.0 16,-23.0 0,-14.0 -16,-23.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-23.0 0,-14.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-14.0 16,-23.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-31.5, 28.8)">
-      <polygon points="0,-37.0 16,-28.0 0,-19.0 -16,-28.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-28.0 0,-19.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-19.0 16,-28.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-10.5, 40.2)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(10.5, 51.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(31.5, 63.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(52.5, 74.8)" class="anim-p3">
-      <polygon points="0,-47.0 16,-38.0 0,-29.0 -16,-38.0" fill="url(#g-gold-top)" stroke="#F2DFB3" stroke-width="0.5" stroke-opacity="0.7" />
-      <polygon points="-16,-38.0 0,-29.0 0,9 -16,0" fill="url(#g-gold-left)" />
-      <polygon points="0,-29.0 16,-38.0 16,0 0,9" fill="url(#g-gold-right)" />
-      <circle cx="0" cy="-38.0" r="1.8" fill="#FFFFFF" />
-    </g>
-    <g transform="translate(73.5, 86.2)" class="anim-p1">
-      <polygon points="0,-54.0 16,-45.0 0,-36.0 -16,-45.0" fill="url(#g-gold-top)" stroke="#F2DFB3" stroke-width="0.5" stroke-opacity="0.7" />
-      <polygon points="-16,-45.0 0,-36.0 0,9 -16,0" fill="url(#g-gold-left)" />
-      <polygon points="0,-36.0 16,-45.0 16,0 0,9" fill="url(#g-gold-right)" />
-      <circle cx="0" cy="-45.0" r="1.8" fill="#FFFFFF" />
-    </g>
-    <g transform="translate(94.5, 97.8)" class="anim-p2">
-      <polygon points="0,-61.0 16,-52.0 0,-43.0 -16,-52.0" fill="url(#g-gold-top)" stroke="#F2DFB3" stroke-width="0.5" stroke-opacity="0.7" />
-      <polygon points="-16,-52.0 0,-43.0 0,9 -16,0" fill="url(#g-gold-left)" />
-      <polygon points="0,-43.0 16,-52.0 16,0 0,9" fill="url(#g-gold-right)" />
-      <circle cx="0" cy="-52.0" r="1.8" fill="#FFFFFF" />
-    </g>
-    <g transform="translate(115.5, 109.2)" class="anim-p3">
-      <polygon points="0,-68.0 16,-59.0 0,-50.0 -16,-59.0" fill="url(#g-gold-top)" stroke="#F2DFB3" stroke-width="0.5" stroke-opacity="0.7" />
-      <polygon points="-16,-59.0 0,-50.0 0,9 -16,0" fill="url(#g-gold-left)" />
-      <polygon points="0,-50.0 16,-59.0 16,0 0,9" fill="url(#g-gold-right)" />
-      <circle cx="0" cy="-59.0" r="1.8" fill="#FFFFFF" />
-    </g>
-    <g transform="translate(136.5, 120.8)" class="anim-p1">
-      <polygon points="0,-51.0 16,-42.0 0,-33.0 -16,-42.0" fill="url(#g-gold-top)" stroke="#F2DFB3" stroke-width="0.5" stroke-opacity="0.7" />
-      <polygon points="-16,-42.0 0,-33.0 0,9 -16,0" fill="url(#g-gold-left)" />
-      <polygon points="0,-33.0 16,-42.0 16,0 0,9" fill="url(#g-gold-right)" />
-      <circle cx="0" cy="-42.0" r="1.8" fill="#FFFFFF" />
-    </g>
-    <g transform="translate(157.5, 132.2)" class="anim-p2">
-      <polygon points="0,-58.0 16,-49.0 0,-40.0 -16,-49.0" fill="url(#g-gold-top)" stroke="#F2DFB3" stroke-width="0.5" stroke-opacity="0.7" />
-      <polygon points="-16,-49.0 0,-40.0 0,9 -16,0" fill="url(#g-gold-left)" />
-      <polygon points="0,-40.0 16,-49.0 16,0 0,9" fill="url(#g-gold-right)" />
-      <circle cx="0" cy="-49.0" r="1.8" fill="#FFFFFF" />
-    </g>
-    <g transform="translate(-262.5, -74.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-241.5, -63.2)">
-      <polygon points="0,-27.0 16,-18.0 0,-9.0 -16,-18.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-18.0 0,-9.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-9.0 16,-18.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-220.5, -51.8)">
-      <polygon points="0,-32.0 16,-23.0 0,-14.0 -16,-23.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-23.0 0,-14.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-14.0 16,-23.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-199.5, -40.2)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-178.5, -28.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-157.5, -17.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-136.5, -5.8)">
-      <polygon points="0,-24.0 16,-15.0 0,-6.0 -16,-15.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-15.0 0,-6.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-6.0 16,-15.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-115.5, 5.8)">
-      <polygon points="0,-29.0 16,-20.0 0,-11.0 -16,-20.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-20.0 0,-11.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-11.0 16,-20.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(-94.5, 17.2)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-73.5, 28.8)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-52.5, 40.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-31.5, 51.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(-10.5, 63.2)" class="anim-p1">
-      <polygon points="0,-34.0 16,-25.0 0,-16.0 -16,-25.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-25.0 0,-16.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-16.0 16,-25.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(10.5, 74.8)" class="anim-p1">
-      <polygon points="0,-35.0 16,-26.0 0,-17.0 -16,-26.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-26.0 0,-17.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-17.0 16,-26.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(31.5, 86.2)">
-      <polygon points="0,-36.0 16,-27.0 0,-18.0 -16,-27.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-27.0 0,-18.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-18.0 16,-27.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(52.5, 97.8)">
-      <polygon points="0,-17.0 16,-8.0 0,1.0 -16,-8.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-8.0 0,1.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,1.0 16,-8.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(73.5, 109.2)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(94.5, 120.8)">
-      <polygon points="0,-13.0 16,-4.0 0,5.0 -16,-4.0" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.15" />
-      <polygon points="-16,-4.0 0,5.0 0,9 -16,0" fill="url(#g-dark-left)" />
-      <polygon points="0,5.0 16,-4.0 16,0 0,9" fill="url(#g-dark-right)" />
-    </g>
-    <g transform="translate(115.5, 132.2)" class="anim-p1">
-      <polygon points="0,-36.0 16,-27.0 0,-18.0 -16,-27.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-27.0 0,-18.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-18.0 16,-27.0 16,0 0,9" fill="url(#g-silver-right)" />
-    </g>
-    <g transform="translate(136.5, 143.8)" class="anim-p1">
-      <polygon points="0,-37.0 16,-28.0 0,-19.0 -16,-28.0" fill="url(#g-silver-top)" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.35" />
-      <polygon points="-16,-28.0 0,-19.0 0,9 -16,0" fill="url(#g-silver-left)" />
-      <polygon points="0,-19.0 16,-28.0 16,0 0,9" fill="url(#g-silver-right)" />
+
+  <!-- Floating Deep Background Constellation Particles -->
+  <g class="anim-float-a">
+    <circle cx="120" cy="95" r="1" fill="#FFFFFF" opacity="0.4" />
+    <circle cx="160" cy="240" r="1.5" fill="#38BDF8" opacity="0.6" />
+    <circle cx="210" cy="130" r="1.2" fill="#D6B878" opacity="0.5" />
+    <circle cx="280" cy="310" r="1" fill="#FFFFFF" opacity="0.4" />
+    <circle cx="340" cy="80" r="1.4" fill="#E2E7EE" opacity="0.5" />
+    <circle cx="620" cy="90" r="1.5" fill="#D6B878" opacity="0.5" />
+    <circle cx="680" cy="320" r="1" fill="#38BDF8" opacity="0.6" />
+    <circle cx="750" cy="140" r="1.3" fill="#FFFFFF" opacity="0.5" />
+    <circle cx="820" cy="270" r="1.5" fill="#E2E7EE" opacity="0.4" />
+    <circle cx="860" cy="110" r="1" fill="#D6B878" opacity="0.6" />
+  </g>
+  <g class="anim-float-b">
+    <circle cx="95" cy="180" r="1.2" fill="#38BDF8" opacity="0.5" />
+    <circle cx="240" cy="205" r="1" fill="#FFFFFF" opacity="0.4" />
+    <circle cx="305" cy="150" r="1.5" fill="#D6B878" opacity="0.6" />
+    <circle cx="645" cy="265" r="1.2" fill="#E2E7EE" opacity="0.5" />
+    <circle cx="715" cy="100" r="1.5" fill="#38BDF8" opacity="0.5" />
+    <circle cx="790" cy="210" r="1" fill="#FFFFFF" opacity="0.4" />
+    <circle cx="850" cy="340" r="1.3" fill="#D6B878" opacity="0.4" />
+  </g>
+
+  <!-- Central Digital Universe Stage (Center at cx: 470, cy: 215) -->
+  <g id="universe-stage" transform="translate(470, 215)">
+    <!-- Volumetric Ambient Nebula Glow -->
+    <circle cx="0" cy="0" r="175" fill="url(#nebula-glow)" />
+
+    <!-- Distant Holographic Perspective Ring (Tilted 3D Ellipse) -->
+    <ellipse cx="0" cy="0" rx="310" ry="85" fill="none" stroke="#A7B0BE" stroke-width="0.7" stroke-opacity="0.12" stroke-dasharray="4 8" transform="rotate(-15)" />
+
+    <!-- 1. Outer Orbital Ring — Champagne Gold (Tilted 3D Orbit - Counter-Clockwise) -->
+    <g transform="rotate(22)">
+      <ellipse cx="0" cy="0" rx="255" ry="78" fill="none" stroke="url(#gold-metallic)" stroke-width="1.4" stroke-opacity="0.5" />
+      <ellipse cx="0" cy="0" rx="255" ry="78" fill="none" stroke="#FFF3D6" stroke-width="2" class="anim-pulse-line" filter="url(#soft-glow)" />
+      <!-- Luminous Orbit Satellites -->
+      <g class="anim-rot-cw-slow">
+        <circle cx="255" cy="0" r="3.5" fill="#FFF5DE" filter="url(#soft-glow)" />
+        <circle cx="-255" cy="0" r="3" fill="#D6B878" />
+        <circle cx="0" cy="78" r="2.5" fill="#38BDF8" filter="url(#soft-glow)" />
+      </g>
+    </g>
+
+    <!-- 2. Mid Orbital Ring — Liquid Metallic Silver (Tilted -35deg - Clockwise) -->
+    <g transform="rotate(-32)">
+      <ellipse cx="0" cy="0" rx="220" ry="68" fill="none" stroke="url(#silver-metallic)" stroke-width="1.3" stroke-opacity="0.55" />
+      <ellipse cx="0" cy="0" rx="220" ry="68" fill="none" stroke="#E0F2FE" stroke-width="1.8" class="anim-pulse-line-rev" filter="url(#soft-glow)" />
+      <!-- Luminous Node on Silver Orbit -->
+      <g class="anim-rot-ccw-mid">
+        <circle cx="220" cy="0" r="3.2" fill="#E2E7EE" filter="url(#soft-glow)" />
+        <circle cx="-220" cy="0" r="2.8" fill="#7DD3FC" />
+      </g>
+    </g>
+
+    <!-- 3. Inner Orbital Ring — Electric Blue Highlight (Tilted 65deg - High inclination) -->
+    <g transform="rotate(62)">
+      <ellipse cx="0" cy="0" rx="180" ry="54" fill="none" stroke="url(#electric-blue)" stroke-width="1.2" stroke-opacity="0.6" />
+      <ellipse cx="0" cy="0" rx="180" ry="54" fill="none" stroke="#38BDF8" stroke-width="1.6" class="anim-pulse-line" filter="url(#soft-glow)" />
+      <g class="anim-rot-cw-mid">
+        <circle cx="180" cy="0" r="3" fill="#38BDF8" filter="url(#soft-glow)" />
+        <circle cx="-180" cy="0" r="2.5" fill="#FFF5DE" />
+      </g>
+    </g>
+
+    <!-- 4. Deep Inclination Gyro Ring (Tilted -70deg) -->
+    <g transform="rotate(-72)">
+      <ellipse cx="0" cy="0" rx="160" ry="46" fill="none" stroke="#D6B878" stroke-width="0.8" stroke-opacity="0.45" stroke-dasharray="6 4" />
+      <g class="anim-rot-ccw-fast">
+        <circle cx="160" cy="0" r="2.4" fill="#D6B878" />
+        <circle cx="-160" cy="0" r="2.2" fill="#FFFFFF" />
+      </g>
+    </g>
+
+    <!-- 5. Neural Network Constellation Lines & Connecting Nodes (Interconnected AI Graph) -->
+    <g id="neural-graph">
+      <!-- Neural Link Lines with Controlled Translucency -->
+      <line x1="-125" y1="-45" x2="-60" y2="-90" stroke="#38BDF8" stroke-width="0.9" stroke-opacity="0.4" />
+      <line x1="-60" y1="-90" x2="35" y2="-80" stroke="#D6B878" stroke-width="0.9" stroke-opacity="0.45" />
+      <line x1="35" y1="-80" x2="110" y2="-35" stroke="#A7B0BE" stroke-width="0.9" stroke-opacity="0.35" />
+      <line x1="110" y1="-35" x2="135" y2="35" stroke="#38BDF8" stroke-width="0.9" stroke-opacity="0.4" />
+      <line x1="135" y1="35" x2="55" y2="95" stroke="#D6B878" stroke-width="0.9" stroke-opacity="0.4" />
+      <line x1="55" y1="95" x2="-45" y2="85" stroke="#A7B0BE" stroke-width="0.9" stroke-opacity="0.35" />
+      <line x1="-45" y1="85" x2="-120" y2="25" stroke="#38BDF8" stroke-width="0.9" stroke-opacity="0.4" />
+      <line x1="-120" y1="25" x2="-125" y2="-45" stroke="#D6B878" stroke-width="0.9" stroke-opacity="0.4" />
+
+      <!-- Cross-Network Radial Synapses to Central Core -->
+      <line x1="-60" y1="-90" x2="0" y2="0" stroke="#FFF3D6" stroke-width="1.1" stroke-opacity="0.5" stroke-dasharray="3 3" />
+      <line x1="35" y1="-80" x2="0" y2="0" stroke="#38BDF8" stroke-width="1.1" stroke-opacity="0.55" stroke-dasharray="3 3" />
+      <line x1="135" y1="35" x2="0" y2="0" stroke="#D6B878" stroke-width="1.1" stroke-opacity="0.5" stroke-dasharray="3 3" />
+      <line x1="-45" y1="85" x2="0" y2="0" stroke="#E2E7EE" stroke-width="1.1" stroke-opacity="0.5" stroke-dasharray="3 3" />
+      <line x1="-120" y1="25" x2="0" y2="0" stroke="#38BDF8" stroke-width="1.1" stroke-opacity="0.55" stroke-dasharray="3 3" />
+
+      <!-- Synaptic Nodes with Multi-Frequency Pulses -->
+      <g class="anim-node-1">
+        <circle cx="-125" cy="-45" r="3.5" fill="#38BDF8" filter="url(#soft-glow)" />
+        <circle cx="35" cy="-80" r="4.2" fill="#D6B878" filter="url(#soft-glow)" />
+        <circle cx="55" cy="95" r="3.8" fill="#38BDF8" filter="url(#soft-glow)" />
+      </g>
+      <g class="anim-node-2">
+        <circle cx="-60" cy="-90" r="4" fill="#FFF3D6" filter="url(#soft-glow)" />
+        <circle cx="110" cy="-35" r="3.6" fill="#A7B0BE" />
+        <circle cx="-45" cy="85" r="4.2" fill="#D6B878" filter="url(#soft-glow)" />
+      </g>
+      <g class="anim-node-3">
+        <circle cx="135" cy="35" r="4" fill="#38BDF8" filter="url(#soft-glow)" />
+        <circle cx="-120" cy="25" r="3.5" fill="#FFFFFF" filter="url(#soft-glow)" />
+      </g>
+    </g>
+
+    <!-- 6. Central Holographic Sphere (3D Shaded Volumetric Body) -->
+    <g class="anim-pulse-core">
+      <!-- 3D Holographic Sphere Globe -->
+      <circle cx="0" cy="0" r="52" fill="url(#hologram-core)" filter="url(#soft-glow)" />
+      
+      <!-- Geodesic Latitude / Longitude Mesh Lines for Realistic 3D Form -->
+      <ellipse cx="0" cy="0" rx="52" ry="52" fill="none" stroke="#D6B878" stroke-width="0.8" stroke-opacity="0.45" />
+      <ellipse cx="0" cy="0" rx="40" ry="52" fill="none" stroke="#A7B0BE" stroke-width="0.6" stroke-opacity="0.35" />
+      <ellipse cx="0" cy="0" rx="22" ry="52" fill="none" stroke="#38BDF8" stroke-width="0.6" stroke-opacity="0.4" />
+      <ellipse cx="0" cy="0" rx="52" ry="34" fill="none" stroke="#A7B0BE" stroke-width="0.6" stroke-opacity="0.35" />
+      <ellipse cx="0" cy="0" rx="52" ry="16" fill="none" stroke="#D6B878" stroke-width="0.6" stroke-opacity="0.4" />
+
+      <!-- Center Singularity / Quantum Fusion Core -->
+      <circle cx="0" cy="0" r="14" fill="#FFFFFF" filter="url(#core-bloom)" />
+      <circle cx="0" cy="0" r="7" fill="#FDF3DA" />
+      <circle cx="0" cy="0" r="2.5" fill="#FFFFFF" />
+    </g>
+
+    <!-- 7. Orbiting Energy Photons Traversing Space (Traveling Pulse Effect) -->
+    <g transform="rotate(-18)">
+      <circle cx="-190" cy="0" r="2.5" fill="#38BDF8" filter="url(#soft-glow)">
+        <animate attributeName="cx" values="-190; 190; -190" dur="9s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.2; 1; 0.2" dur="9s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    <g transform="rotate(40)">
+      <circle cx="160" cy="0" r="2.2" fill="#D6B878" filter="url(#soft-glow)">
+        <animate attributeName="cx" values="160; -160; 160" dur="7s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.3; 1; 0.3" dur="7s" repeatCount="indefinite" />
+      </circle>
     </g>
   </g>
+
+  <!-- Legend & Telemetry Readouts (Apple-level Luxury Styling) -->
   <g transform="translate(35, 390)">
-    <rect x="0" y="-8" width="12" height="12" rx="2" fill="url(#g-gold-top)" />
-    <text x="18" y="2" class="city-meta" fill="#F5F3ED">Sprint &amp; Architecture Peaks (Champagne Gold)</text>
-    <rect x="310" y="-8" width="12" height="12" rx="2" fill="url(#g-silver-top)" />
-    <text x="328" y="2" class="city-meta" fill="#A7B0BE">Feature Commits &amp; Review (Muted Silver)</text>
-    <rect x="610" y="-8" width="12" height="12" rx="2" fill="url(#g-dark-top)" stroke="#A7B0BE" stroke-width="0.5" />
-    <text x="628" y="2" class="city-meta" fill="#A7B0BE">Baseline Infrastructure Grid</text>
+    <!-- Legend Item 1: Neural Core -->
+    <circle cx="6" cy="-2" r="5" fill="url(#gold-metallic)" filter="url(#soft-glow)" />
+    <text x="18" y="2" class="legend-lbl" fill="#F5F3ED">3D Holographic Core (Champagne Gold)</text>
+
+    <!-- Legend Item 2: Quantum Orbitals -->
+    <rect x="295" y="-6" width="10" height="8" rx="2" fill="url(#silver-metallic)" />
+    <text x="313" y="2" class="legend-lbl" fill="#A7B0BE">Orbital Kinematics (Muted Silver)</text>
+
+    <!-- Legend Item 3: Synaptic Network -->
+    <circle cx="585" cy="-2" r="4.5" fill="#38BDF8" filter="url(#soft-glow)" />
+    <text x="597" y="2" class="legend-lbl" fill="#7DD3FC">Neural Synapses (Electric Blue)</text>
+
+    <!-- Status Indicator -->
+    <text x="875" y="2" class="legend-lbl" fill="#A7B0BE" text-anchor="end">60 FPS &#x2022; SYNCHRONIZED</text>
   </g>
 </svg>

@@ -156,7 +156,7 @@ I am actively seeking **Winter 2026 Internships** in **Software Engineering, AI/
 <br/>
 
 <div align="center">
-  <img src="assets/github-3d-graph.svg" alt="Tejas Kute 3D Isometric Contribution Animation" width="100%" />
+  <img src="assets/github-3d-graph.svg" alt="Tejas Kute 3D Holographic Digital Universe Animation" width="100%" />
 </div>
 
 <br/>
