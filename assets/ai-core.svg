@@ -1,188 +1,789 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
   <defs>
+    <!-- ================= 1. ARCHITECTURAL PALETTE GRADIENTS ================= -->
     <!-- Background Canvas Palette -->
-    <linearGradient id="core-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#17191D" />
-      <stop offset="50%" stop-color="#202124" />
-      <stop offset="100%" stop-color="#111215" />
+    <linearGradient id="bg-charcoal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111315" />
+      <stop offset="45%" stop-color="#14171A" />
+      <stop offset="100%" stop-color="#0E0F11" />
     </linearGradient>
 
-    <!-- Champagne Gold Gradient -->
-    <linearGradient id="gold-metallic" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F2DFB3" />
-      <stop offset="45%" stop-color="#D6B878" />
-      <stop offset="100%" stop-color="#9C7E3E" />
+    <!-- Dark Titanium / Metallic Surfaces -->
+    <linearGradient id="metal-titanium" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#282C31" />
+      <stop offset="35%" stop-color="#1E2125" />
+      <stop offset="70%" stop-color="#17191C" />
+      <stop offset="100%" stop-color="#121315" />
     </linearGradient>
 
-    <!-- Muted Silver Gradient -->
-    <linearGradient id="silver-metallic" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#E2E7EE" />
-      <stop offset="50%" stop-color="#A7B0BE" />
-      <stop offset="100%" stop-color="#6F7887" />
+    <!-- Metallic Facet Highlight -->
+    <linearGradient id="metal-facet" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3A3E45" />
+      <stop offset="50%" stop-color="#23262A" />
+      <stop offset="100%" stop-color="#1A1C1F" />
     </linearGradient>
 
-    <!-- Radial Glows -->
-    <radialGradient id="center-glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#D6B878" stop-opacity="0.32" />
-      <stop offset="60%" stop-color="#A7B0BE" stop-opacity="0.12" />
-      <stop offset="100%" stop-color="#202124" stop-opacity="0" />
+    <!-- Champagne Gold Primary Gradient -->
+    <linearGradient id="gold-champagne" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EEDBB2" />
+      <stop offset="40%" stop-color="#C6A66B" />
+      <stop offset="100%" stop-color="#8F7440" />
+    </linearGradient>
+
+    <!-- Champagne Gold Metallic Specular -->
+    <linearGradient id="gold-specular" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8F7440" />
+      <stop offset="25%" stop-color="#C6A66B" />
+      <stop offset="50%" stop-color="#FFF5E0" />
+      <stop offset="75%" stop-color="#C6A66B" />
+      <stop offset="100%" stop-color="#8F7440" />
+    </linearGradient>
+
+    <!-- Warm Ivory / High-Precision White -->
+    <linearGradient id="warm-ivory" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#E7DFD0" />
+      <stop offset="100%" stop-color="#B8AF9F" />
+    </linearGradient>
+
+    <!-- Slate Gray Engineering Struts -->
+    <linearGradient id="slate-engineering" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A5ACB5" />
+      <stop offset="50%" stop-color="#89919B" />
+      <stop offset="100%" stop-color="#555C66" />
+    </linearGradient>
+
+    <!-- Smoked Glass Panel Gradient -->
+    <linearGradient id="smoked-glass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2C3036" stop-opacity="0.82" />
+      <stop offset="45%" stop-color="#1B1D20" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#141518" stop-opacity="0.90" />
+    </linearGradient>
+
+    <!-- Glass Refraction and Edge Highlight -->
+    <linearGradient id="glass-edge-shimmer" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.55" />
+      <stop offset="20%" stop-color="#E7DFD0" stop-opacity="0.30" />
+      <stop offset="70%" stop-color="#89919B" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#34373A" stop-opacity="0.40" />
+    </linearGradient>
+
+    <!-- Ambient Core Radial Glow -->
+    <radialGradient id="core-ambient-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C6A66B" stop-opacity="0.22" />
+      <stop offset="45%" stop-color="#C6A66B" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#111315" stop-opacity="0" />
     </radialGradient>
 
-    <radialGradient id="ring-glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#A7B0BE" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#A7B0BE" stop-opacity="0" />
+    <!-- Module 01 AI Ambient Glow -->
+    <radialGradient id="ai-ambient-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C6A66B" stop-opacity="0.16" />
+      <stop offset="60%" stop-color="#89919B" stop-opacity="0.04" />
+      <stop offset="100%" stop-color="#111315" stop-opacity="0" />
     </radialGradient>
 
-    <!-- Grid -->
-    <pattern id="core-grid" width="30" height="30" patternUnits="userSpaceOnUse">
-      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.08" />
+    <!-- Module 03 Security Ambient Glow -->
+    <radialGradient id="sec-ambient-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#89919B" stop-opacity="0.18" />
+      <stop offset="60%" stop-color="#C6A66B" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#111315" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- ================= 2. ARCHITECTURAL BLUEPRINT GRID ================= -->
+    <pattern id="arch-grid-subtle" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#34373A" stroke-width="0.5" stroke-opacity="0.30" />
+      <circle cx="24" cy="24" r="0.6" fill="#89919B" fill-opacity="0.25" />
     </pattern>
 
-    <style>
-      .label-text {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    <pattern id="arch-grid-major" width="96" height="96" patternUnits="userSpaceOnUse">
+      <path d="M 96 0 L 0 0 0 96" fill="none" stroke="#34373A" stroke-width="0.85" stroke-opacity="0.50" />
+      <path d="M 92 96 L 96 96 L 96 92" fill="none" stroke="#C6A66B" stroke-width="1" stroke-opacity="0.40" />
+    </pattern>
+
+    <!-- ================= 3. ADVANCED ANIMATION BEHAVIOURS ================= -->
+    <style><![CDATA[
+      /* --- Typography and Base Styles --- */
+      .arch-label {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         font-size: 11px;
-        letter-spacing: 2px;
-        font-weight: 600;
+        letter-spacing: 2.2px;
+        font-weight: 700;
         text-transform: uppercase;
       }
-      .mono-metric {
+      .arch-sublabel {
         font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-        font-size: 10px;
+        font-size: 9px;
+        letter-spacing: 1.4px;
+        font-weight: 500;
+        fill: #89919B;
+      }
+      .telemetry-text {
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+        font-size: 9.5px;
         letter-spacing: 1.5px;
-        fill: #A7B0BE;
       }
-      @keyframes orbitOne {
-        0% { transform: rotate(0deg) skewX(12deg); }
-        100% { transform: rotate(360deg) skewX(12deg); }
+
+      /* --- Scene 01: Architectural Blueprint Construction (0.0s - 2.2s) --- */
+      @keyframes blueprintDraw {
+        0% { stroke-dashoffset: 600; opacity: 0; }
+        30% { opacity: 0.8; }
+        100% { stroke-dashoffset: 0; opacity: 0.65; }
       }
-      @keyframes orbitTwo {
-        0% { transform: rotate(360deg) skewY(-8deg); }
-        100% { transform: rotate(0deg) skewY(-8deg); }
+      .blueprint-trace {
+        stroke-dasharray: 600;
+        animation: blueprintDraw 2.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       }
-      @keyframes orbitThree {
-        0% { transform: rotate(0deg) scale(1, 0.55); }
-        100% { transform: rotate(360deg) scale(1, 0.55); }
+
+      @keyframes blueprintFadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
       }
-      @keyframes coreFloat {
-        0%, 100% { transform: translateY(0px) scale(1); }
-        50% { transform: translateY(-7px) scale(1.02); }
+      .blueprint-overlay {
+        animation: blueprintFadeIn 1.8s ease-out forwards;
       }
-      @keyframes particleFloat {
-        0% { transform: translateY(0px); opacity: 0.3; }
-        50% { transform: translateY(-12px); opacity: 0.9; }
-        100% { transform: translateY(0px); opacity: 0.3; }
+
+      /* --- Scene 02: Central Core Assembly (1.5s - 4.0s) --- */
+      @keyframes coreAssembly {
+        0% {
+          opacity: 0;
+          transform: translateY(22px) scale(0.94);
+        }
+        60% {
+          opacity: 0.95;
+          transform: translateY(-2px) scale(1.01);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0px) scale(1);
+        }
       }
-      .orbit-ring-1 {
-        transform-origin: 400px 250px;
-        animation: orbitOne 22s linear infinite;
+      .central-core-assembly {
+        transform-origin: 400px 210px;
+        animation: coreAssembly 2.8s cubic-bezier(0.2, 0.9, 0.3, 1) 0.8s backwards;
       }
-      .orbit-ring-2 {
-        transform-origin: 400px 250px;
-        animation: orbitTwo 17s linear infinite;
+
+      /* --- Scene 03: Modules Structural Entrance (Staggered Assembly) --- */
+      @keyframes moduleLeftEnter {
+        0% {
+          opacity: 0;
+          transform: translate(-30px, 14px) scale(0.92);
+        }
+        70% {
+          opacity: 1;
+          transform: translate(2px, -1px) scale(1.005);
+        }
+        100% {
+          opacity: 1;
+          transform: translate(0px, 0px) scale(1);
+        }
       }
-      .orbit-ring-3 {
-        transform-origin: 400px 250px;
-        animation: orbitThree 26s linear infinite;
+      .module-ai-assembly {
+        transform-origin: 165px 210px;
+        animation: moduleLeftEnter 2.4s cubic-bezier(0.2, 0.9, 0.3, 1) 1.4s backwards;
       }
-      .core-floating-group {
-        animation: coreFloat 6s ease-in-out infinite;
+
+      @keyframes moduleRightEnter {
+        0% {
+          opacity: 0;
+          transform: translate(30px, 14px) scale(0.92);
+        }
+        70% {
+          opacity: 1;
+          transform: translate(-2px, -1px) scale(1.005);
+        }
+        100% {
+          opacity: 1;
+          transform: translate(0px, 0px) scale(1);
+        }
       }
-      .particle-1 { animation: particleFloat 4s ease-in-out infinite; }
-      .particle-2 { animation: particleFloat 5.2s ease-in-out infinite 1s; }
-      .particle-3 { animation: particleFloat 3.8s ease-in-out infinite 0.5s; }
-      .particle-4 { animation: particleFloat 4.7s ease-in-out infinite 1.5s; }
-    </style>
+      .module-sec-assembly {
+        transform-origin: 635px 210px;
+        animation: moduleRightEnter 2.4s cubic-bezier(0.2, 0.9, 0.3, 1) 1.7s backwards;
+      }
+
+      @keyframes moduleCenterTierEnter {
+        0% {
+          opacity: 0;
+          transform: translateY(-18px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+      .module-se-tier {
+        animation: moduleCenterTierEnter 2.2s cubic-bezier(0.2, 0.9, 0.3, 1) 1.2s backwards;
+      }
+
+      /* --- Scene 04: Intelligent Network Connection Pathways --- */
+      @keyframes busConduitDraw {
+        0% { stroke-dashoffset: 400; opacity: 0; }
+        40% { opacity: 0.9; }
+        100% { stroke-dashoffset: 0; opacity: 0.75; }
+      }
+      .bus-conduit {
+        stroke-dasharray: 400;
+        animation: busConduitDraw 2.5s cubic-bezier(0.25, 1, 0.5, 1) 2.2s backwards;
+      }
+
+      /* Travelling Light Packets along Network Pathways */
+      @keyframes packetFlowLeftToCenter {
+        0% {
+          transform: translate(0px, 0px);
+          opacity: 0;
+        }
+        15% { opacity: 1; }
+        85% { opacity: 1; }
+        100% {
+          transform: translate(235px, 0px);
+          opacity: 0;
+        }
+      }
+      .packet-flow-1 {
+        animation: packetFlowLeftToCenter 4.2s cubic-bezier(0.4, 0, 0.2, 1) 3.5s infinite;
+      }
+
+      @keyframes packetFlowCenterToRight {
+        0% {
+          transform: translate(0px, 0px);
+          opacity: 0;
+        }
+        15% { opacity: 1; }
+        85% { opacity: 1; }
+        100% {
+          transform: translate(235px, 0px);
+          opacity: 0;
+        }
+      }
+      .packet-flow-2 {
+        animation: packetFlowCenterToRight 4.2s cubic-bezier(0.4, 0, 0.2, 1) 4.8s infinite;
+      }
+
+      @keyframes packetFlowDiagonal {
+        0% {
+          transform: translate(0px, 0px);
+          opacity: 0;
+        }
+        20% { opacity: 0.9; }
+        80% { opacity: 0.9; }
+        100% {
+          transform: translate(235px, 60px);
+          opacity: 0;
+        }
+      }
+      .packet-flow-3 {
+        animation: packetFlowDiagonal 5.0s cubic-bezier(0.4, 0, 0.2, 1) 4.1s infinite;
+      }
+
+      /* Code-stream micro-pulses for Software Engineering module */
+      @keyframes codePulseStream {
+        0% { stroke-dashoffset: 120; opacity: 0.2; }
+        50% { stroke-dashoffset: 0; opacity: 0.9; }
+        100% { stroke-dashoffset: -120; opacity: 0.2; }
+      }
+      .code-pulse-line {
+        stroke-dasharray: 30 60;
+        animation: codePulseStream 3.8s linear infinite;
+      }
+
+      /* Defensive Shield Pulse for Cybersecurity */
+      @keyframes shieldDefensivePulse {
+        0%, 100% { stroke-opacity: 0.35; filter: drop-shadow(0 0 0px #C6A66B); }
+        50% { stroke-opacity: 0.85; filter: drop-shadow(0 0 3px #C6A66B); }
+      }
+      .shield-barrier-pulse {
+        animation: shieldDefensivePulse 4.5s ease-in-out 2.5s infinite;
+      }
+
+      /* --- Scene 05: Cinematic Detail and Ambient Idle State (NO CONTINUOUS SPIN) --- */
+      @keyframes subtleElevateIdle {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-3.5px); }
+      }
+      .idle-floating-structure {
+        animation: subtleElevateIdle 7s ease-in-out 3.5s infinite;
+      }
+
+      @keyframes specularSweep {
+        0% { transform: translateX(-80px) skewX(-20deg); opacity: 0; }
+        25% { opacity: 0.45; }
+        60% { opacity: 0.45; }
+        100% { transform: translateX(260px) skewX(-20deg); opacity: 0; }
+      }
+      .specular-light-sweep {
+        animation: specularSweep 8s cubic-bezier(0.4, 0, 0.2, 1) 4.0s infinite;
+      }
+
+      @keyframes nodeIllumination {
+        0%, 100% { opacity: 0.6; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.15); }
+      }
+      .node-pulse-point {
+        transform-origin: center;
+        animation: nodeIllumination 3.2s ease-in-out infinite;
+      }
+
+      /* --- Scene 06: Typography Entrance --- */
+      @keyframes labelTypographyRise {
+        0% { opacity: 0; transform: translateY(8px); }
+        100% { opacity: 1; transform: translateY(0px); }
+      }
+      .label-col-1 { animation: labelTypographyRise 1.6s cubic-bezier(0.16, 1, 0.3, 1) 2.6s backwards; }
+      .label-col-2 { animation: labelTypographyRise 1.6s cubic-bezier(0.16, 1, 0.3, 1) 2.9s backwards; }
+      .label-col-3 { animation: labelTypographyRise 1.6s cubic-bezier(0.16, 1, 0.3, 1) 3.2s backwards; }
+
+      /* --- ACCESSIBILITY: PREFERS-REDUCED-MOTION --- */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        .blueprint-trace,
+        .blueprint-overlay,
+        .central-core-assembly,
+        .module-ai-assembly,
+        .module-sec-assembly,
+        .module-se-tier,
+        .bus-conduit,
+        .packet-flow-1,
+        .packet-flow-2,
+        .packet-flow-3,
+        .code-pulse-line,
+        .shield-barrier-pulse,
+        .idle-floating-structure,
+        .specular-light-sweep,
+        .node-pulse-point,
+        .label-col-1,
+        .label-col-2,
+        .label-col-3 {
+          animation: none !important;
+          stroke-dashoffset: 0 !important;
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
+    ]]></style>
   </defs>
 
-  <!-- Background Canvas -->
-  <rect width="100%" height="100%" fill="url(#core-bg)" rx="12" />
-  <rect width="100%" height="100%" fill="url(#core-grid)" rx="12" />
+  <!-- ================= SCENE 01: ARCHITECTURAL BLUEPRINT CANVAS ================= -->
+  <!-- Deep Charcoal Canvas Background -->
+  <rect width="100%" height="100%" fill="url(#bg-charcoal)" rx="10" />
 
-  <!-- Outer Frame -->
-  <rect x="15" y="15" width="770" height="470" fill="none" stroke="#A7B0BE" stroke-width="1" stroke-opacity="0.18" rx="8" />
+  <!-- Dual-Tier Technical Blueprint Grid -->
+  <rect width="100%" height="100%" fill="url(#arch-grid-subtle)" rx="10" />
+  <rect width="100%" height="100%" fill="url(#arch-grid-major)" rx="10" />
 
-  <!-- Central Glow Horizon -->
-  <circle cx="400" cy="250" r="220" fill="url(#center-glow)" />
+  <!-- Outer Architectural Blueprint Frame with Chamfered Precision Edges -->
+  <rect x="20" y="20" width="760" height="460" fill="none" stroke="#34373A" stroke-width="1.2" stroke-opacity="0.6" rx="6" />
+  <rect x="26" y="26" width="748" height="448" fill="none" stroke="#C6A66B" stroke-width="0.5" stroke-opacity="0.25" rx="4" />
 
-  <!-- Background Concentric Target Guides -->
-  <circle cx="400" cy="250" r="190" fill="none" stroke="#A7B0BE" stroke-width="0.75" stroke-opacity="0.12" stroke-dasharray="4 6" />
-  <circle cx="400" cy="250" r="140" fill="none" stroke="#D6B878" stroke-width="0.75" stroke-opacity="0.15" />
-  <line x1="400" y1="50" x2="400" y2="450" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.1" />
-  <line x1="160" y1="250" x2="640" y2="250" stroke="#A7B0BE" stroke-width="0.5" stroke-opacity="0.1" />
-
-  <!-- Three Orbital Rings (SMIL/CSS Hybrid for full fallback) -->
-  <!-- Ring 1: Artificial Intelligence (Champagne Gold accented) -->
-  <g class="orbit-ring-1">
-    <ellipse cx="400" cy="250" rx="180" ry="70" fill="none" stroke="url(#gold-metallic)" stroke-width="1.6" stroke-opacity="0.65" stroke-dasharray="16 8" />
-    <circle cx="580" cy="250" r="5" fill="#D6B878" />
-    <circle cx="220" cy="250" r="3.5" fill="#F2DFB3" />
+  <!-- Drafting Corner Registration Fiducials -->
+  <g stroke="#C6A66B" stroke-width="1.5" fill="none">
+    <path d="M 20 40 L 20 20 L 40 20" />
+    <path d="M 780 40 L 780 20 L 760 20" />
+    <path d="M 20 460 L 20 480 L 40 480" />
+    <path d="M 780 460 L 780 480 L 760 480" />
   </g>
 
-  <!-- Ring 2: Software Engineering (Muted Silver accented) -->
-  <g class="orbit-ring-2">
-    <ellipse cx="400" cy="250" rx="155" ry="95" fill="none" stroke="url(#silver-metallic)" stroke-width="1.5" stroke-opacity="0.55" />
-    <circle cx="400" cy="155" r="4.5" fill="#A7B0BE" />
-    <circle cx="400" cy="345" r="3" fill="#E2E7EE" />
+  <!-- Cardinal Coordinate Datum Marks -->
+  <g fill="#89919B" class="telemetry-text">
+    <text x="35" y="44" fill="#C6A66B" font-weight="600">+AXIS: X01-Y01</text>
+    <text x="765" y="44" text-anchor="end" fill="#89919B">GRID_RES: 24.00mm</text>
+    <text x="35" y="468" fill="#89919B">ORIGIN: [0, 0, 0]</text>
+    <text x="765" y="468" text-anchor="end" fill="#C6A66B" font-weight="600">DATUM: WGS-84-ISO</text>
   </g>
 
-  <!-- Ring 3: Cybersecurity (Dual Metallic Intersect) -->
-  <g class="orbit-ring-3">
-    <ellipse cx="400" cy="250" rx="205" ry="110" fill="none" stroke="url(#silver-metallic)" stroke-width="1.2" stroke-opacity="0.4" stroke-dasharray="6 6" />
-    <circle cx="605" cy="250" r="4" fill="#D6B878" />
-    <circle cx="195" cy="250" r="3.5" fill="#A7B0BE" />
+  <!-- Architectural Construction Guidelines (Scene 01 Vector Drawing) -->
+  <g stroke="#34373A" stroke-width="0.75" stroke-dasharray="4 6" class="blueprint-trace">
+    <!-- Major Axonometric Projection Rails -->
+    <line x1="40" y1="210" x2="760" y2="210" />
+    <line x1="400" y1="40" x2="400" y2="440" />
+    <line x1="165" y1="60" x2="165" y2="420" />
+    <line x1="635" y1="60" x2="635" y2="420" />
+    <!-- Diagonal Alignment Traces -->
+    <line x1="165" y1="210" x2="400" y2="120" />
+    <line x1="400" y1="120" x2="635" y2="210" />
+    <line x1="165" y1="210" x2="400" y2="300" />
+    <line x1="400" y1="300" x2="635" y2="210" />
   </g>
 
-  <!-- Floating Particles in Field -->
+  <!-- Technical Dimension Spans -->
+  <g stroke="#89919B" stroke-width="0.75" class="blueprint-overlay">
+    <!-- Center Span Dimension -->
+    <line x1="165" y1="85" x2="635" y2="85" />
+    <line x1="165" y1="80" x2="165" y2="90" />
+    <line x1="400" y1="82" x2="400" y2="88" />
+    <line x1="635" y1="80" x2="635" y2="90" />
+    <text x="400" y="78" text-anchor="middle" class="telemetry-text" fill="#89919B">MODULAR SPAN: 470.00mm // INTER-TIER REGISTER</text>
+  </g>
+
+  <!-- Top Architectural Telemetry Status Bar -->
+  <g transform="translate(40, 52)">
+    <rect x="0" y="0" width="180" height="18" fill="#1B1D20" stroke="#34373A" stroke-width="0.8" rx="3" />
+    <circle cx="10" cy="9" r="3" fill="#C6A66B" />
+    <text x="20" y="12.5" class="telemetry-text" fill="#E7DFD0">ARCH_INTEL // MATRIX-04</text>
+    
+    <text x="720" y="12.5" text-anchor="end" class="telemetry-text" fill="#89919B">
+      STATE: <tspan fill="#C6A66B">ACTIVE_SYNC</tspan> | LATENCY: 0.18ms
+    </text>
+  </g>
+
+  <!-- Ambient Volumetric Lighting Centers -->
+  <circle cx="400" cy="210" r="190" fill="url(#core-ambient-glow)" />
+  <circle cx="165" cy="210" r="140" fill="url(#ai-ambient-glow)" />
+  <circle cx="635" cy="210" r="140" fill="url(#sec-ambient-glow)" />
+
+  <!-- ================= SCENE 04: INTELLIGENT NETWORK CONNECTION BUSES ================= -->
+  <!-- Horizontal and Axonometric Precision Gold Bus Lines Connecting All Three Modules -->
+  <g fill="none">
+    <!-- Primary Inter-Module High-Speed Bus (Col 1 AI to Col 2 Core to Col 3 Security) -->
+    <path d="M 165 210 L 265 210 L 295 180 L 375 180 L 400 210 L 425 180 L 505 180 L 535 210 L 635 210" 
+          stroke="#C6A66B" stroke-width="1.6" stroke-opacity="0.85" class="bus-conduit" />
+    <path d="M 165 210 L 265 210 L 295 180 L 375 180 L 400 210 L 425 180 L 505 180 L 535 210 L 635 210" 
+          stroke="#FFFFFF" stroke-width="0.6" stroke-opacity="0.45" />
+
+    <!-- Secondary Lower Triangulation Conduits -->
+    <path d="M 165 255 L 260 255 L 320 295 L 400 295 L 480 295 L 540 255 L 635 255" 
+          stroke="#89919B" stroke-width="1.2" stroke-opacity="0.5" stroke-dasharray="6 4" class="bus-conduit" />
+    
+    <!-- Vertical Cross-Tie Arteries -->
+    <line x1="265" y1="180" x2="265" y2="255" stroke="#34373A" stroke-width="0.8" />
+    <line x1="535" y1="180" x2="535" y2="255" stroke="#34373A" stroke-width="0.8" />
+  </g>
+
+  <!-- Travelling Light Packets (Animated Photons Traversing Pathways) -->
   <g>
-    <circle cx="310" cy="170" r="2.5" fill="#D6B878" class="particle-1" />
-    <circle cx="490" cy="140" r="2" fill="#A7B0BE" class="particle-2" />
-    <circle cx="280" cy="310" r="2.5" fill="#A7B0BE" class="particle-3" />
-    <circle cx="530" cy="330" r="3" fill="#D6B878" class="particle-4" />
+    <!-- Packet 1: AI to Central Core -->
+    <g class="packet-flow-1">
+      <circle cx="165" cy="210" r="4" fill="#FFFFFF" />
+      <circle cx="165" cy="210" r="7" fill="#C6A66B" fill-opacity="0.4" />
+    </g>
+
+    <!-- Packet 2: Central Core to Cybersecurity -->
+    <g class="packet-flow-2">
+      <circle cx="400" cy="210" r="4" fill="#FFFFFF" />
+      <circle cx="400" cy="210" r="7" fill="#C6A66B" fill-opacity="0.4" />
+    </g>
+
+    <!-- Packet 3: Diagonal Lower Traversal -->
+    <g class="packet-flow-3">
+      <circle cx="165" cy="255" r="3" fill="#E7DFD0" />
+      <circle cx="165" cy="255" r="5.5" fill="#89919B" fill-opacity="0.5" />
+    </g>
   </g>
 
-  <!-- Central Computational Core (3D Geometric Diamond/Cube Hybrid) -->
-  <g class="core-floating-group">
-    <!-- Isometric Outer Hexagonal Shield -->
-    <polygon points="400,195 448,222 448,278 400,305 352,278 352,222" fill="#17191D" stroke="url(#gold-metallic)" stroke-width="2" stroke-opacity="0.85" />
+  <!-- Interconnection Junction Nodes -->
+  <g fill="#1B1D20" stroke="#C6A66B" stroke-width="1.2">
+    <circle cx="265" cy="210" r="4.5" />
+    <circle cx="265" cy="210" r="1.8" fill="#C6A66B" class="node-pulse-point" />
+
+    <circle cx="295" cy="180" r="4.5" />
+    <circle cx="295" cy="180" r="1.8" fill="#C6A66B" class="node-pulse-point" />
+
+    <circle cx="505" cy="180" r="4.5" />
+    <circle cx="505" cy="180" r="1.8" fill="#C6A66B" class="node-pulse-point" />
+
+    <circle cx="535" cy="210" r="4.5" />
+    <circle cx="535" cy="210" r="1.8" fill="#C6A66B" class="node-pulse-point" />
     
-    <!-- Top Facet -->
-    <polygon points="400,195 448,222 400,250 352,222" fill="#202124" stroke="#A7B0BE" stroke-width="1" stroke-opacity="0.45" />
-    <!-- Left Facet -->
-    <polygon points="352,222 400,250 400,305 352,278" fill="#17191D" stroke="#D6B878" stroke-width="1" stroke-opacity="0.4" />
-    <!-- Right Facet -->
-    <polygon points="448,222 400,250 400,305 448,278" fill="#131417" stroke="#A7B0BE" stroke-width="1" stroke-opacity="0.3" />
+    <circle cx="320" cy="295" r="3.5" stroke="#89919B" />
+    <circle cx="480" cy="295" r="3.5" stroke="#89919B" />
+  </g>
 
-    <!-- Radiant Inner Core Specular Highlight -->
-    <circle cx="400" cy="250" r="16" fill="url(#gold-metallic)" />
-    <circle cx="400" cy="250" r="8" fill="#F8FAFC" />
+  <!-- ================= IDLE FLOATING STRUCTURAL ASSEMBLY ================= -->
+  <!-- Controlled 3D Elevation breathing (NO CONTINUOUS SPINNING) -->
+  <g class="idle-floating-structure">
+
+    <!-- ================= SCENE 02: CENTRAL COMPUTATIONAL CORE ================= -->
+    <g id="central-computational-core" class="central-core-assembly">
+      
+      <!-- Tier 0: Foundation Sub-Plinth (Brushed Dark Titanium) -->
+      <polygon points="400,120 485,165 485,255 400,300 315,255 315,165" 
+               fill="url(#metal-titanium)" stroke="#34373A" stroke-width="1.6" />
+
+      <!-- Isometric Engineering Chamfer Grooves on Foundation -->
+      <polygon points="400,126 478,168 400,210 322,168" 
+               fill="#22252A" stroke="#34373A" stroke-width="0.8" />
+      <polygon points="322,168 400,210 400,292 322,250" 
+               fill="#181A1D" stroke="#34373A" stroke-width="0.8" />
+      <polygon points="478,168 400,210 400,292 478,250" 
+               fill="#131416" stroke="#34373A" stroke-width="0.8" />
+
+      <!-- Architectural Heat-Sink Fin Ribs (Cooling Grid) -->
+      <g stroke="#34373A" stroke-width="0.8">
+        <line x1="340" y1="195" x2="385" y2="220" />
+        <line x1="340" y1="215" x2="385" y2="240" />
+        <line x1="340" y1="235" x2="385" y2="260" />
+        <line x1="415" y1="220" x2="460" y2="195" />
+        <line x1="415" y1="240" x2="460" y2="215" />
+        <line x1="415" y1="260" x2="460" y2="235" />
+      </g>
+
+      <!-- Tier 1: Mid-Tier Smoked Glass Mezzanine Platform -->
+      <polygon points="400,145 460,178 460,242 400,275 340,242 340,178" 
+               fill="url(#smoked-glass)" stroke="url(#gold-specular)" stroke-width="1.4" />
+
+      <!-- Tier 2: Monolithic Central Processing Core (Precision Glass & Titanium Prism) -->
+      <g transform="translate(0, 0)">
+        <!-- Top Facet (Specular Warm Ivory / Champagne Gold Accent) -->
+        <polygon points="400,165 440,188 400,210 360,188" 
+                 fill="url(#metal-facet)" stroke="#C6A66B" stroke-width="1.2" />
+
+        <!-- Left Translucent Glass Facet -->
+        <polygon points="360,188 400,210 400,255 360,233" 
+                 fill="url(#smoked-glass)" stroke="#89919B" stroke-width="1" />
+
+        <!-- Right Titanium Shaded Facet -->
+        <polygon points="440,188 400,210 400,255 440,233" 
+                 fill="#16181B" stroke="#34373A" stroke-width="1" />
+
+        <!-- Central Illuminated Computational Waveguide (Vertical Optical Axis) -->
+        <line x1="400" y1="165" x2="400" y2="255" stroke="url(#gold-champagne)" stroke-width="2" />
+        <line x1="400" y1="185" x2="400" y2="235" stroke="#FFFFFF" stroke-width="1" />
+
+        <!-- Central Tensor Core Micro-Reticle -->
+        <circle cx="400" cy="210" r="14" fill="#17191D" stroke="#C6A66B" stroke-width="1.4" />
+        <circle cx="400" cy="210" r="8" fill="url(#gold-champagne)" class="node-pulse-point" />
+        <circle cx="400" cy="210" r="3" fill="#FFFFFF" />
+
+        <!-- Precision Optical Framing Reticle (Brackets, not orbits) -->
+        <path d="M 390 202 L 386 202 L 386 218 L 390 218" fill="none" stroke="#E7DFD0" stroke-width="1.2" />
+        <path d="M 410 202 L 414 202 L 414 218 L 410 218" fill="none" stroke="#E7DFD0" stroke-width="1.2" />
+      </g>
+
+      <!-- Central Core Technical Stamp -->
+      <g transform="translate(400, 318)">
+        <rect x="-65" y="0" width="130" height="15" fill="#141619" stroke="#34373A" stroke-width="0.8" rx="2" />
+        <text x="0" y="10.5" text-anchor="middle" class="arch-sublabel" fill="#C6A66B">CORE // ARCH-ENGINE</text>
+      </g>
+    </g>
+
+    <!-- ================= SCENE 03 — MODULE 01: ARTIFICIAL INTELLIGENCE ================= -->
+    <!-- Position: Left Wing (Center x=165, y=210) -->
+    <g id="module-01-artificial-intelligence" class="module-ai-assembly">
+      
+      <!-- Outer Hexagonal Structural Framework Cage -->
+      <polygon points="165,130 225,165 225,235 165,270 105,235 105,165" 
+               fill="#17191C" stroke="#34373A" stroke-width="1.4" fill-opacity="0.9" />
+
+      <!-- Geometric Neural Network Lattice Struts -->
+      <g stroke="#89919B" stroke-width="1" stroke-opacity="0.6">
+        <line x1="165" y1="145" x2="210" y2="175" />
+        <line x1="210" y1="175" x2="210" y2="225" />
+        <line x1="210" y1="225" x2="165" y2="255" />
+        <line x1="165" y1="255" x2="120" y2="225" />
+        <line x1="120" y1="225" x2="120" y2="175" />
+        <line x1="120" y1="175" x2="165" y2="145" />
+
+        <!-- Cross-Lattice Data Vectors -->
+        <line x1="165" y1="145" x2="165" y2="255" stroke="#C6A66B" stroke-width="0.8" stroke-opacity="0.4" />
+        <line x1="120" y1="175" x2="210" y2="225" stroke="#C6A66B" stroke-width="0.8" stroke-opacity="0.4" />
+        <line x1="120" y1="225" x2="210" y2="175" stroke="#C6A66B" stroke-width="0.8" stroke-opacity="0.4" />
+      </g>
+
+      <!-- Central Floating Smoked Glass Cube (Neural Kernel) -->
+      <g transform="translate(0, 0)">
+        <!-- Cube Top Facet -->
+        <polygon points="165,188 190,202 165,216 140,202" 
+                 fill="url(#metal-facet)" stroke="#C6A66B" stroke-width="1.2" />
+        <!-- Cube Left Smoked Glass Facet -->
+        <polygon points="140,202 165,216 165,242 140,228" 
+                 fill="url(#smoked-glass)" stroke="#89919B" stroke-width="1" />
+        <!-- Cube Right Titanium Facet -->
+        <polygon points="190,202 165,216 165,242 190,228" 
+                 fill="#141518" stroke="#34373A" stroke-width="1" />
+
+        <!-- Interior Tensor Nucleus Node -->
+        <circle cx="165" cy="216" r="6" fill="url(#gold-champagne)" class="node-pulse-point" />
+        <circle cx="165" cy="216" r="2.5" fill="#FFFFFF" />
+      </g>
+
+      <!-- 6 Interconnected Intelligent Neural Nodes (Champagne Gold Anchors) -->
+      <g fill="#17191C" stroke="#C6A66B" stroke-width="1.4">
+        <!-- Node 1 (Top) -->
+        <circle cx="165" cy="145" r="4.5" />
+        <circle cx="165" cy="145" r="1.8" fill="#C6A66B" />
+
+        <!-- Node 2 (Top Right) -->
+        <circle cx="210" cy="175" r="4.5" />
+        <circle cx="210" cy="175" r="1.8" fill="#E7DFD0" />
+
+        <!-- Node 3 (Bottom Right) -->
+        <circle cx="210" cy="225" r="4.5" />
+        <circle cx="210" cy="225" r="1.8" fill="#C6A66B" />
+
+        <!-- Node 4 (Bottom) -->
+        <circle cx="165" cy="255" r="4.5" />
+        <circle cx="165" cy="255" r="1.8" fill="#C6A66B" />
+
+        <!-- Node 5 (Bottom Left) -->
+        <circle cx="120" cy="225" r="4.5" />
+        <circle cx="120" cy="225" r="1.8" fill="#E7DFD0" />
+
+        <!-- Node 6 (Top Left) -->
+        <circle cx="120" cy="175" r="4.5" />
+        <circle cx="120" cy="175" r="1.8" fill="#C6A66B" />
+      </g>
+
+      <!-- Architectural Technical Tag -->
+      <g transform="translate(165, 290)">
+        <rect x="-60" y="0" width="120" height="14" fill="#141619" stroke="#34373A" stroke-width="0.8" rx="2" />
+        <text x="0" y="9.8" text-anchor="middle" class="arch-sublabel" fill="#C6A66B">MOD_01 // TENSOR.NET</text>
+      </g>
+    </g>
+
+    <!-- ================= SCENE 03 — MODULE 02: SOFTWARE ENGINEERING ================= -->
+    <!-- Architectural Coding Structure and Layered Geometric Panels (Integrated Tier x=400) -->
+    <g id="module-02-software-engineering" class="module-se-tier">
+      
+      <!-- Upper Framework Scaffolding Beam -->
+      <g stroke="#34373A" stroke-width="1.2">
+        <line x1="330" y1="95" x2="470" y2="95" />
+        <line x1="330" y1="90" x2="330" y2="105" stroke="#C6A66B" stroke-width="1.5" />
+        <line x1="470" y1="90" x2="470" y2="105" stroke="#C6A66B" stroke-width="1.5" />
+      </g>
+
+      <!-- Layered Code-Execution Glass Panels (Staggered Compiler Architecture) -->
+      <!-- Panel 1 (Top Layer: Syntax Buffer) -->
+      <g transform="translate(335, 102)">
+        <rect x="0" y="0" width="130" height="16" rx="2" 
+              fill="url(#smoked-glass)" stroke="#89919B" stroke-width="0.8" />
+        <!-- Animated Code Instruction Lines -->
+        <line x1="12" y1="8" x2="45" y2="8" stroke="#C6A66B" stroke-width="1.6" class="code-pulse-line" />
+        <line x1="52" y1="8" x2="88" y2="8" stroke="#E7DFD0" stroke-width="1.6" class="code-pulse-line" />
+        <line x1="95" y1="8" x2="118" y2="8" stroke="#89919B" stroke-width="1.6" />
+      </g>
+
+      <!-- Panel 2 (Mid Layer: Reactive Engine State) -->
+      <g transform="translate(345, 122)">
+        <rect x="0" y="0" width="110" height="15" rx="2" 
+              fill="#1B1D20" stroke="#34373A" stroke-width="0.8" />
+        <line x1="10" y1="7.5" x2="35" y2="7.5" stroke="#89919B" stroke-width="1.4" />
+        <line x1="42" y1="7.5" x2="78" y2="7.5" stroke="#C6A66B" stroke-width="1.4" class="code-pulse-line" />
+        <line x1="84" y1="7.5" x2="100" y2="7.5" stroke="#FFFFFF" stroke-width="1.4" />
+      </g>
+
+      <!-- Structural Framework Alignment Guides and Pins -->
+      <circle cx="335" cy="95" r="2.5" fill="#C6A66B" />
+      <circle cx="400" cy="95" r="3" fill="#E7DFD0" stroke="#1B1D20" stroke-width="1" />
+      <circle cx="465" cy="95" r="2.5" fill="#C6A66B" />
+      
+      <!-- Technical Tag for Module 02 -->
+      <text x="400" y="87" text-anchor="middle" class="arch-sublabel" fill="#89919B">
+        MOD_02 // COMPILER.FRAMEWORK
+      </text>
+    </g>
+
+    <!-- ================= SCENE 03 — MODULE 03: CYBERSECURITY ================= -->
+    <!-- Position: Right Wing (Center x=635, y=210) -->
+    <g id="module-03-cybersecurity" class="module-sec-assembly">
+      
+      <!-- Outer Hexagonal / Shield Geometric Frame -->
+      <polygon points="635,128 695,160 695,230 635,274 575,230 575,160" 
+               fill="#17191C" stroke="#34373A" stroke-width="1.4" fill-opacity="0.9" />
+
+      <!-- Layer 1: Protective Smoked Glass Armor Plates (Layered Facets) -->
+      <!-- Left Defensive Plate -->
+      <polygon points="635,138 585,166 585,224 635,260" 
+               fill="url(#smoked-glass)" stroke="#89919B" stroke-width="1" />
+
+      <!-- Right Defensive Plate -->
+      <polygon points="635,138 685,166 685,224 635,260" 
+               fill="#15171A" stroke="#34373A" stroke-width="1" />
+
+      <!-- High-Precision Interlocking Shield Edges (Defensive Barrier) -->
+      <polygon points="635,148 672,170 672,218 635,246 598,218 598,170" 
+               fill="none" stroke="url(#gold-champagne)" stroke-width="1.4" 
+               class="shield-barrier-pulse" />
+
+      <!-- Central Cryptographic Security-Lock Element (Hexagonal Cipher Gate) -->
+      <g transform="translate(635, 208)">
+        <!-- Vault Rotor Core Base -->
+        <polygon points="0,-18 16,-9 16,9 0,18 -16,9 -16,-9" 
+                 fill="#1E2125" stroke="#C6A66B" stroke-width="1.4" />
+
+        <!-- Interior Circular Cipher Horizon -->
+        <circle cx="0" cy="0" r="10" fill="#141517" stroke="#89919B" stroke-width="0.9" />
+        
+        <!-- Precision Security Keyway Reticle -->
+        <path d="M 0 -6 L 0 6 M -6 0 L 6 0" stroke="#C6A66B" stroke-width="1.4" stroke-linecap="round" />
+        <circle cx="0" cy="0" r="2.5" fill="#FFFFFF" class="node-pulse-point" />
+
+        <!-- Cardinal Defensive Anchor Bolts -->
+        <circle cx="0" cy="-14" r="1.2" fill="#E7DFD0" />
+        <circle cx="12" cy="-7" r="1.2" fill="#E7DFD0" />
+        <circle cx="12" cy="7" r="1.2" fill="#E7DFD0" />
+        <circle cx="0" cy="14" r="1.2" fill="#E7DFD0" />
+        <circle cx="-12" cy="7" r="1.2" fill="#E7DFD0" />
+        <circle cx="-12" cy="-7" r="1.2" fill="#E7DFD0" />
+      </g>
+
+      <!-- Animated Defensive Perimeter Vectors -->
+      <g stroke="#C6A66B" stroke-width="0.8" stroke-dasharray="3 5">
+        <line x1="575" y1="160" x2="635" y2="208" />
+        <line x1="695" y1="160" x2="635" y2="208" />
+        <line x1="635" y1="274" x2="635" y2="208" stroke="#89919B" />
+      </g>
+
+      <!-- Architectural Technical Tag -->
+      <g transform="translate(635, 290)">
+        <rect x="-60" y="0" width="120" height="14" fill="#141619" stroke="#34373A" stroke-width="0.8" rx="2" />
+        <text x="0" y="9.8" text-anchor="middle" class="arch-sublabel" fill="#C6A66B">MOD_03 // CIPHER.VAULT</text>
+      </g>
+    </g>
+
+  </g> <!-- End of idle-floating-structure -->
+
+
+  <!-- ================= SCENE 06: FINAL COMPOSITION & THREE TECHNOLOGY LABELS ================= -->
+  <!-- Architectural Separation Base Horizon Line -->
+  <line x1="50" y1="410" x2="750" y2="410" stroke="#34373A" stroke-width="1" stroke-opacity="0.75" />
+  <line x1="50" y1="410" x2="190" y2="410" stroke="#C6A66B" stroke-width="1.8" stroke-opacity="0.85" />
+  <line x1="330" y1="410" x2="470" y2="410" stroke="#89919B" stroke-width="1.8" stroke-opacity="0.85" />
+  <line x1="610" y1="410" x2="750" y2="410" stroke="#C6A66B" stroke-width="1.8" stroke-opacity="0.85" />
+
+  <!-- Base Registry Badges and Three Technology Labels -->
+  <!-- 01 // ARTIFICIAL INTELLIGENCE (Column 1: Left) -->
+  <g id="label-01" class="label-col-1" transform="translate(165, 432)">
+    <!-- Active Indicator Pip -->
+    <circle cx="-95" cy="0" r="3.5" fill="#C6A66B" />
+    <circle cx="-95" cy="0" r="1.5" fill="#FFFFFF" />
     
-    <!-- Core Crosshair Reticle -->
-    <line x1="400" y1="230" x2="400" y2="270" stroke="#17191D" stroke-width="1.2" />
-    <line x1="380" y1="250" x2="420" y2="250" stroke="#17191D" stroke-width="1.2" />
+    <text x="-80" y="4" class="arch-label" fill="#E7DFD0">
+      01 // <tspan fill="#C6A66B">ARTIFICIAL INTELLIGENCE</tspan>
+    </text>
+    <text x="-80" y="18" class="arch-sublabel">
+      NEURAL COMPUTE ARCHITECTURE
+    </text>
   </g>
 
-  <!-- Three Orbital Legend Badges at Base -->
-  <g transform="translate(100, 435)">
-    <!-- Node 1: AI -->
-    <circle cx="0" cy="0" r="5" fill="#D6B878" />
-    <text x="14" y="4" class="label-text" fill="#F5F3ED">01 // ARTIFICIAL INTELLIGENCE</text>
-  </g>
-  <g transform="translate(345, 435)">
-    <!-- Node 2: Software Engineering -->
-    <circle cx="0" cy="0" r="5" fill="#A7B0BE" />
-    <text x="14" y="4" class="label-text" fill="#F5F3ED">02 // SOFTWARE ENGINEERING</text>
-  </g>
-  <g transform="translate(605, 435)">
-    <!-- Node 3: Cybersecurity -->
-    <circle cx="0" cy="0" r="5" fill="#D6B878" />
-    <circle cx="0" cy="0" r="2" fill="#17191D" />
-    <text x="14" y="4" class="label-text" fill="#F5F3ED">03 // CYBERSECURITY</text>
+  <!-- 02 // SOFTWARE ENGINEERING (Column 2: Center) -->
+  <g id="label-02" class="label-col-2" transform="translate(400, 432)">
+    <!-- Active Indicator Pip -->
+    <circle cx="-95" cy="0" r="3.5" fill="#89919B" />
+    <circle cx="-95" cy="0" r="1.5" fill="#FFFFFF" />
+
+    <text x="-80" y="4" class="arch-label" fill="#E7DFD0">
+      02 // <tspan fill="#89919B">SOFTWARE ENGINEERING</tspan>
+    </text>
+    <text x="-80" y="18" class="arch-sublabel">
+      DISTRIBUTED SYSTEMS &amp; COMPILER
+    </text>
   </g>
 
-  <!-- Top Metadata Bar -->
-  <g transform="translate(35, 40)">
-    <text x="0" y="0" class="mono-metric" fill="#D6B878">SYSTEM ARCHITECTURE: COMPUTATIONAL CORE</text>
-    <text x="730" y="0" class="mono-metric" text-anchor="end" fill="#A7B0BE">TRI-ORBITAL MATRIX v2.4</text>
+  <!-- 03 // CYBERSECURITY (Column 3: Right) -->
+  <g id="label-03" class="label-col-3" transform="translate(635, 432)">
+    <!-- Active Indicator Pip -->
+    <circle cx="-95" cy="0" r="3.5" fill="#C6A66B" />
+    <circle cx="-95" cy="0" r="1.5" fill="#FFFFFF" />
+
+    <text x="-80" y="4" class="arch-label" fill="#E7DFD0">
+      03 // <tspan fill="#C6A66B">CYBERSECURITY</tspan>
+    </text>
+    <text x="-80" y="18" class="arch-sublabel">
+      CRYPTOGRAPHIC POSTURE &amp; DEFENSE
+    </text>
+  </g>
+
+  <!-- Bottom Blueprint Dimension Telemetry Line -->
+  <g class="blueprint-overlay">
+    <line x1="20" y1="472" x2="780" y2="472" stroke="#34373A" stroke-width="0.5" stroke-opacity="0.4" />
   </g>
 </svg>

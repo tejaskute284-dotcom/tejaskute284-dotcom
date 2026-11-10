@@ -5,7 +5,7 @@
 <br/>
 
 <div align="center">
-  <img src="assets/ai-core.svg" alt="Computational AI Core &amp; Orbital Engineering Matrix" width="680px" />
+  <img src="assets/ai-core.svg" alt="Architectural Intelligence Network — Computational Core Matrix" width="680px" />
 </div>
 
 <br/>
